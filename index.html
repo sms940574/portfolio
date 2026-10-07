@@ -170,6 +170,21 @@
   footer .row a{color:#f3f3f0;margin-right:18px}
 
   html.js .reveal:not(.in){opacity:0;transform:translateY(24px)}
+  /* one screen per page (desktop) */
+  html{scroll-padding-top:64px}
+  @media (min-width:901px){
+    .hero{height:calc(100svh - 64px);min-height:600px;padding:0;display:flex;align-items:center}
+    .hero-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(24px,4vw,72px);align-items:center;width:100%}
+    .hero h1{font-size:clamp(44px,5.4vw,104px);margin:16px 0 22px}
+    .hero .lineup{margin-top:0;grid-template-columns:1fr 1fr;height:calc(100svh - 64px - 80px);min-height:520px}
+    .hero .lineup img{aspect-ratio:auto;height:100%;object-fit:contain;object-position:center}
+    #work{height:calc(100svh - 64px);min-height:560px;padding:28px 0 32px;display:flex}
+    #work .wrap{display:flex;flex-direction:column;width:100%}
+    #work .sec-head{margin-bottom:22px}
+    #work .cards{flex:1;min-height:0}
+    #work .card{aspect-ratio:auto;height:100%;max-height:none;min-height:0}
+  }
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.gauge i{animation:none;width:100%}}
 
@@ -217,7 +232,8 @@
   <a class="btn" href="Misuk_Seo_CV_Game.pdf" target="_blank">CV ↓</a>
 </div></nav>
 
-<header class="hero" id="top"><div class="wrap">
+<header class="hero" id="top"><div class="wrap hero-grid">
+  <div class="hero-text">
   <div class="eyebrow">Misuk (Suki) Seo · Berlin</div>
   <h1>I design games with the eye of a <em>creative director.</em></h1>
   <p class="lead">Game designer from South Korea. I led two Unity team projects and built one game solo, from concept to a two-week exhibition in a Seoul select shop. Before games, I spent 4.5 years directing a fashion brand. Mood, concept and detail are how I work.</p>
@@ -231,7 +247,8 @@
     <a class="btn" href="#work">See the work ↓</a>
     <a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a>
   </div>
-  <div class="lineup reveal">
+  </div>
+  <div class="lineup">
     <img src="img/render-bubu.jpg" alt="Character BuBu">
     <img src="img/render-pipi.jpg" alt="Character PiPi">
     <img src="img/render-popo.jpg" alt="Character PoPo">
@@ -239,7 +256,7 @@
   </div>
 </div></header>
 
-<section id="work" style="padding-top:56px"><div class="wrap">
+<section id="work"><div class="wrap">
   <div class="sec-head"><h2>Selected work</h2><span class="eyebrow">2026</span></div>
   <div class="cards">
     <a class="card reveal" href="#rrr">
