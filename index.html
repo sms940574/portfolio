@@ -1,0 +1,555 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suki Seo — Game Designer</title>
+<meta name="description" content="Portfolio of Misuk (Suki) Seo, game designer and creative director based in Berlin.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<script>document.documentElement.classList.add('js')</script>
+<style>
+  :root{
+    --bg:#f2f2ef; --paper:#fbfbf9; --ink:#141416; --muted:#6b6d72; --line:#dcdcd6;
+    --mint:#5cc7b6; --mint-soft:#dff3ef; --red:#e2322b; --red-soft:#fbe3e1;
+    --radius:18px; --max:1200px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 28px}
+  h1,h2,h3,.display{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;line-height:1.05}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 82%,transparent);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .2s}
+  nav.scrolled{border-color:var(--line)}
+  nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px}
+  .logo{font-family:"Space Grotesk";font-weight:700;font-size:19px;text-decoration:none}
+  .logo span{color:var(--muted);font-weight:400}
+  nav ul{display:flex;gap:26px;list-style:none;font-size:15px}
+  nav a{text-decoration:none}
+  nav ul a:hover{color:var(--muted)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500;font-size:15px;transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink);border:1px solid var(--ink)}
+
+  /* hero */
+  .hero{padding:92px 0 40px}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .hero h1{font-size:clamp(44px,7.4vw,104px);font-weight:700;margin:18px 0 26px;max-width:12ch}
+  .hero h1 em{font-style:normal;color:var(--mint)}
+  .hero p.lead{font-size:clamp(18px,1.6vw,21px);max-width:620px;color:#33343a}
+  .hero .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+  .chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:22px}
+  .chip{font-size:13px;font-weight:500;padding:6px 12px;border-radius:99px;background:var(--paper);border:1px solid var(--line)}
+  .lineup{margin-top:56px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#fff;border-radius:var(--radius);overflow:hidden}
+  .lineup img{width:100%;aspect-ratio:3/4;object-fit:cover;object-position:center 20%;transition:transform .5s}
+  .lineup img:hover{transform:scale(1.04)}
+
+  /* work index */
+  section{padding:88px 0}
+  .sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}
+  .sec-head h2{font-size:clamp(32px,4vw,52px)}
+  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+  .card{position:relative;display:block;border-radius:var(--radius);overflow:hidden;text-decoration:none;background:#000;aspect-ratio:4/3}
+  .card img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.92}
+  .card:hover img{transform:scale(1.04);opacity:1}
+  .card .meta{position:absolute;left:0;right:0;bottom:0;padding:26px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+  .card h3{font-size:30px}
+  .card p{font-size:15px;opacity:.9}
+  .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:10px}
+  .tag.red{background:var(--red);color:#fff}
+  .tag.mint{background:var(--mint);color:#06302a}
+
+  /* case study */
+  .case{padding-top:40px}
+  .case-hero{border-radius:var(--radius);overflow:hidden;position:relative}
+  .case-hero > img{width:100%;max-height:640px;object-fit:cover}
+  @media (max-width:900px){.case-hero[style*="grid"]{grid-template-columns:1fr!important}.case-hero[style*="grid"] .phone{aspect-ratio:1/1!important}}
+  .case-title{display:grid;grid-template-columns:1.25fr 1fr;gap:48px;margin:44px 0 12px;align-items:start}
+  .case-title h2{font-size:clamp(48px,6.4vw,92px)}
+  .case-title .one{font-size:clamp(20px,1.9vw,25px);line-height:1.4;font-family:"Space Grotesk";color:#2a2b30}
+  .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--line);margin-top:36px}
+  .facts div{padding:16px 18px 18px 0;border-bottom:1px solid var(--line)}
+  .facts dt{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+  .facts dd{font-size:16px;margin-top:4px}
+  .block{margin-top:84px}
+  .block-head{display:grid;grid-template-columns:220px 1fr;gap:32px;margin-bottom:28px}
+  .num{font-family:"Space Grotesk";font-size:14px;color:var(--muted);padding-top:8px}
+  .block-head h3{font-size:clamp(28px,3.2vw,42px)}
+  .block-head p{margin-top:12px;max-width:640px;color:#34353b}
+  .indent{margin-left:252px}
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .four{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .box{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .box h4{font-family:"Space Grotesk";font-size:20px;margin-bottom:6px}
+  .box p{font-size:15px;color:#3b3c42}
+  .box .k{font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;margin-bottom:10px;display:block}
+  .red .k,.k.red{color:var(--red)} .k.mint{color:#1f8f7e}
+  figure{border-radius:14px;overflow:hidden;background:#e6e6e1;position:relative}
+  figure img,figure video{width:100%;height:100%;object-fit:cover}
+  figcaption{position:absolute;left:10px;bottom:10px;font-size:12px;font-weight:500;background:rgba(255,255,255,.88);padding:4px 9px;border-radius:99px}
+  .ratio-43{aspect-ratio:4/3} .ratio-169{aspect-ratio:16/9} .ratio-34{aspect-ratio:3/4} .ratio-916{aspect-ratio:9/16} .ratio-11{aspect-ratio:1/1}
+  .gallery{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+  .g2{grid-column:span 2} .g3{grid-column:span 3} .g4{grid-column:span 4} .g6{grid-column:span 6}
+
+  .compare{display:grid;grid-template-columns:1fr 40px 1fr;align-items:center;gap:10px}
+  .compare .arrow{font-size:28px;text-align:center;color:var(--red)}
+  .zones{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:18px}
+  .zone{border-left:3px solid var(--red);padding:6px 0 6px 14px}
+  .zone b{font-family:"Space Grotesk";display:block}
+  .zone span{font-size:14px;color:var(--muted)}
+
+  .phones{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;align-items:start}
+  .phone{border-radius:22px;overflow:hidden;background:#111;aspect-ratio:9/16}
+  .phone video{width:100%;height:100%;object-fit:cover}
+  .wide-video{border-radius:14px;overflow:hidden;background:#111;aspect-ratio:16/9}
+  .wide-video video{width:100%;height:100%;object-fit:cover}
+
+  .pipeline{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}
+  .pipeline figure{aspect-ratio:3/4}
+  .pipeline .lbl{font-size:13px;margin-top:8px}
+  .pipeline .lbl b{display:block;font-family:"Space Grotesk"}
+  .pipeline .lbl span{color:var(--muted)}
+
+  /* level flow */
+  .flow{display:grid;grid-template-columns:repeat(6,1fr);gap:0;margin-top:6px}
+  .step{position:relative;padding:18px 14px 18px 16px;border-radius:12px;margin-right:10px;color:#0f2b27}
+  .step:not(:last-child)::after{content:"→";position:absolute;right:-12px;top:50%;transform:translateY(-50%);font-size:16px;color:var(--muted);z-index:2}
+  .step b{font-family:"Space Grotesk";display:block;font-size:17px}
+  .step span{font-size:13px;line-height:1.35;display:block;margin-top:4px}
+  .distort{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:12px;letter-spacing:.06em;text-transform:uppercase}
+  .distort i{flex:1;height:2px;margin:8px 14px 0;background:linear-gradient(90deg,var(--mint-soft),var(--mint),#2c3a8c)}
+
+  .items{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .item{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
+  .item .ico{width:44px;height:44px;border-radius:12px;background:var(--mint-soft);display:grid;place-items:center;font-size:22px;margin-bottom:12px}
+  .item b{font-family:"Space Grotesk";font-size:19px;display:block}
+  .item small{display:block;color:#1f8f7e;font-weight:600;font-size:12px;letter-spacing:.06em;text-transform:uppercase;margin:2px 0 6px}
+  .item p{font-size:14.5px;color:#3b3c42}
+
+  .gauge{height:14px;border-radius:99px;background:#e3e6e5;overflow:hidden;margin:16px 0 6px}
+  .gauge i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--mint),#9fe6d9);border-radius:99px;animation:fill 4.5s ease-in-out infinite}
+  @keyframes fill{0%{width:4%}80%{width:100%}100%{width:100%}}
+  .gauge-lbl{display:flex;justify-content:space-between;font-size:12px;color:var(--muted)}
+
+  .role{background:var(--ink);color:#f3f3f0;border-radius:var(--radius);padding:40px;display:grid;grid-template-columns:220px 1fr;gap:32px}
+  .role h3{font-size:28px}
+  .role ul{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px 28px}
+  .role li{padding-left:18px;position:relative;font-size:15.5px}
+  .role li::before{content:"";position:absolute;left:0;top:10px;width:7px;height:7px;border-radius:50%;background:var(--accent,var(--mint))}
+
+  .quote{font-family:"Space Grotesk";font-size:clamp(22px,2.4vw,30px);line-height:1.3;max-width:860px}
+  .quote small{display:block;font-family:Inter;font-size:14px;color:var(--muted);margin-top:12px}
+
+  .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+  .pill{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:500;padding:9px 15px;border-radius:99px;border:1px solid var(--ink);text-decoration:none}
+  .pill:hover{background:var(--ink);color:#fff}
+  .divider{height:1px;background:var(--line);margin:24px 0 0}
+
+  /* about */
+  .about{display:grid;grid-template-columns:1fr 1.2fr;gap:56px;align-items:start}
+  .about h2{font-size:clamp(36px,4.6vw,64px)}
+  .stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}
+  .stat b{font-family:"Space Grotesk";font-size:34px;display:block;line-height:1}
+  .stat span{font-size:13px;color:var(--muted)}
+  footer{background:var(--ink);color:#f3f3f0;padding:90px 0 40px;margin-top:40px}
+  footer h2{font-size:clamp(40px,6vw,84px);max-width:14ch}
+  footer a.mail{display:inline-block;margin-top:24px;font-family:"Space Grotesk";font-size:clamp(20px,2.4vw,30px);color:#9fe6d9}
+  footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-top:70px;font-size:14px;color:#a9aab0}
+  footer .row a{color:#f3f3f0;margin-right:18px}
+
+  html.js .reveal:not(.in){opacity:0;transform:translateY(24px)}
+  .reveal{transition:opacity .8s ease,transform .8s ease}
+  @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.gauge i{animation:none;width:100%}}
+
+  @media (max-width:900px){
+    body{font-size:16px}
+    nav ul{display:none}
+    .wrap{padding:0 16px}
+    section{padding:64px 0}
+    .cards,.case-title,.two,.about{grid-template-columns:1fr}
+    .case-title{gap:16px}
+    .facts{grid-template-columns:1fr 1fr}
+    .block-head{grid-template-columns:1fr;gap:6px}
+    .indent{margin-left:0}
+    .three,.items,.zones{grid-template-columns:1fr 1fr}
+    .four{grid-template-columns:1fr 1fr}
+    .gallery{grid-template-columns:1fr 1fr}
+    .g2,.g3,.g4,.g6{grid-column:span 2}
+    .gallery .g2.half{grid-column:span 1}
+    .pipeline{grid-template-columns:repeat(4,1fr)}
+    .phones{grid-template-columns:1fr 1fr}
+    .phones .wide-video{grid-column:span 2}
+    .flow{grid-template-columns:1fr 1fr}
+    .step{margin:0 8px 8px 0}
+    .step::after{display:none}
+    .compare{grid-template-columns:1fr}
+    .compare .arrow{transform:rotate(90deg)}
+    .role{grid-template-columns:1fr;padding:28px}
+    .role ul{grid-template-columns:1fr}
+    .stats{grid-template-columns:1fr 1fr 1fr}
+    .lineup{grid-template-columns:repeat(2,1fr)}
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#top">Suki Seo <span>— game designer</span></a>
+  <ul>
+    <li><a href="#rrr">RRR × FFF</a></li>
+    <li><a href="#dwu">Don't Wake Up</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+  <a class="btn" href="Misuk_Seo_CV_Game.pdf" target="_blank">CV ↓</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">Misuk (Suki) Seo · Berlin</div>
+  <h1>I design games with the eye of a <em>creative director.</em></h1>
+  <p class="lead">Game designer from South Korea. I led two Unity projects from concept to a two-week exhibition in a Seoul select shop. Before games, I spent 4.5 years directing a fashion brand. Mood, concept and detail are how I work.</p>
+  <div class="chips">
+    <span class="chip">Native Korean speaker</span>
+    <span class="chip">Game design · Level design</span>
+    <span class="chip">QA &amp; playtesting</span>
+    <span class="chip">AI-assisted prototyping</span>
+  </div>
+  <div class="cta">
+    <a class="btn" href="#work">See the work ↓</a>
+    <a class="btn ghost" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a>
+  </div>
+  <div class="lineup reveal">
+    <img src="img/render-bubu.jpg" alt="Character BuBu">
+    <img src="img/render-pipi.jpg" alt="Character PiPi">
+    <img src="img/render-popo.jpg" alt="Character PoPo">
+    <img src="img/render-ringring.jpg" alt="Character RingRing">
+  </div>
+</div></header>
+
+<section id="work"><div class="wrap">
+  <div class="sec-head"><h2>Selected work</h2><span class="eyebrow">2026</span></div>
+  <div class="cards">
+    <a class="card reveal" href="#rrr">
+      <img src="img/rrr-hanger.jpg" alt="RRR × FFF in-game">
+      <div class="meta"><span class="tag red">Exhibited in store · Sep 2026</span><h3>RRR × FFF</h3><p>A racing game set inside a real Seoul select shop.</p></div>
+    </a>
+    <a class="card reveal" href="#dwu">
+      <img src="img/dwu-hero.jpg" alt="Don't Wake Up title screen">
+      <div class="meta"><span class="tag mint">Team lead · 5 people</span><h3>Don't Wake Up</h3><p>A mystery adventure in the dream just before waking.</p></div>
+    </a>
+  </div>
+</div></section>
+
+<!-- ============ RRR × FFF ============ -->
+<section class="case" id="rrr"><div class="wrap">
+  <div class="case-hero reveal" style="display:grid;grid-template-columns:1fr 2.1fr;gap:12px;border-radius:0">
+    <div class="phone" style="aspect-ratio:auto;border-radius:14px;background:#e7e9e8"><video autoplay muted loop playsinline preload="metadata" src="video/ex-mainposter.mp4"></video></div>
+    <figure style="aspect-ratio:16/10"><img src="img/rrr-wall.jpg" alt="RRR × FFF in-game"></figure>
+  </div>
+  <div class="case-title">
+    <div><span class="tag red">Case study 01</span><h2>RRR × FFF</h2></div>
+    <p class="one">I turned the select shop FFF in Itaewon, Seoul into a racing game — and brought the game back into the store for a two-week exhibition.</p>
+  </div>
+  <dl class="facts">
+    <div><dt>My role</dt><dd>Lead game designer &amp; director</dd></div>
+    <div><dt>Team</dt><dd>4 people</dd></div>
+    <div><dt>Timeline</dt><dd>10-week build (Jun–Aug) + exhibition (Sep) 2026</dd></div>
+    <div><dt>Platform</dt><dd>Web-based mobile game (Unity 6) + 2 web interactions</dd></div>
+    <div><dt>Tools</dt><dd>Unity, Blender, Nomad Sculpt, Claude, three.js</dd></div>
+    <div><dt>Result</dt><dd>In-store exhibition at FFF, 5–19 Sep 2026</dd></div>
+  </dl>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">01 — Problem</div><div><h3>A photo zone ends after one photo.</h3><p>FFF already had a strong space and a loyal community. But the in-store experience stopped at a static photo spot, and the brand lost contact with visitors once they left Itaewon.</p></div></div>
+    <div class="three indent">
+      <div class="box red"><span class="k">Problem 01</span><h4>Static photo zones</h4><p>One picture, then nothing. No reason to come back.</p></div>
+      <div class="box red"><span class="k">Problem 02</span><h4>Online and offline apart</h4><p>What happens in the store stays in the store.</p></div>
+      <div class="box red"><span class="k">Problem 03</span><h4>Limited by location</h4><p>Itaewon is a strong spot, but only for people who are there.</p></div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">02 — Concept</div><div><h3>Run, Rest, Refresh.</h3><p>The project name is the design. I split time in the store into three states and gave each one its own content.</p></div></div>
+    <div class="three indent">
+      <div class="box"><span class="k red">Run</span><h4>Race through the store</h4><p>Shelves, mannequins and racks become obstacles on the track. Players see the products while they run.</p></div>
+      <div class="box"><span class="k red">Rest</span><h4>Stay and explore</h4><p>Adventure mode removes the timer. Players walk the same map, pose their character and take photos.</p></div>
+      <div class="box"><span class="k red">Refresh</span><h4>Leave with something new</h4><p>Face tracking and a bubble installation turn visitors into the main character of the store.</p></div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">03 — Level design</div><div><h3>The real store became the track.</h3><p>I did not invent a map. I blocked out the real FFF layout in grey boxes, ran through it in the engine, and split it into zones. The route decides which products players see, and in what order.</p></div></div>
+    <div class="compare indent">
+      <figure class="ratio-43"><img loading="lazy" src="img/store-inside.jpg" alt="FFF store interior"><figcaption>The real store</figcaption></figure>
+      <div class="arrow">→</div>
+      <figure class="ratio-43"><img loading="lazy" src="img/rrr-hall.jpg" alt="The store as a game level"><figcaption>The game level</figcaption></figure>
+    </div>
+    <div class="zones indent">
+      <div class="zone"><b>Start zone</b><span>Opening cinematic, a gentle stretch to learn the controls</span></div>
+      <div class="zone"><b>Display zone</b><span>Racks, mannequins and real products as obstacles</span></div>
+      <div class="zone"><b>Center pillar</b><span>Jump and dash combos, where the boost matters most</span></div>
+      <div class="zone"><b>Final zone</b><span>The most distorted space, finish line and ceremony</span></div>
+    </div>
+    <div class="gallery indent" style="margin-top:22px">
+      <figure class="g2 half ratio-43"><img loading="lazy" src="img/rrr-wall.jpg" alt="Red wall"></figure>
+      <figure class="g2 half ratio-43"><img loading="lazy" src="img/rrr-hanger.jpg" alt="Hanger zone"></figure>
+      <figure class="g2 half ratio-43"><img loading="lazy" src="img/rrr-goods.jpg" alt="Store goods in game"></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">04 — Play</div><div><h3>Understood in 30 seconds.</h3><p>Nobody reads a tutorial in a shop. The controls are a virtual joystick, jump and dash. Everything is vertical 1080×1920, so every clip a player records is ready for Reels and TikTok.</p></div></div>
+    <div class="phones indent">
+      <div class="wide-video"><video controls preload="metadata" playsinline poster="img/poster-trailer.jpg" src="https://sms940574.github.io/fffXrrr-Web/media/trailer.mp4"></video></div>
+      <div class="phone"><video autoplay muted loop playsinline preload="metadata" src="video/adventure-only.mp4"></video></div>
+      <div class="phone"><video autoplay muted loop playsinline preload="metadata" src="video/insta-2.mp4"></video></div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">05 — In-store interactions</div><div><h3>Visitors became the main character.</h3><p>Two browser-based installations ran in the store. They need only a webcam and a link, so many people can try them at once.</p></div></div>
+    <div class="two indent">
+      <div class="box">
+        <span class="k red">Interaction 01</span><h4>Face tracking</h4>
+        <p>Your facial expression is mirrored onto a game character in real time.</p>
+        <div class="four" style="margin-top:16px">
+          <figure class="ratio-34"><img loading="lazy" src="img/face-bubu.jpg" alt=""></figure>
+          <figure class="ratio-34"><img loading="lazy" src="img/face-pipi.jpg" alt=""></figure>
+          <figure class="ratio-34"><img loading="lazy" src="img/face-popo.jpg" alt=""></figure>
+          <figure class="ratio-34"><img loading="lazy" src="img/face-ringring.jpg" alt=""></figure>
+        </div>
+        <div class="links"><a class="pill" target="_blank" href="https://eunseojung422-commits.github.io/face-puppet/">Try it (webcam) ↗</a></div>
+      </div>
+      <div class="box">
+        <span class="k red">Interaction 02</span><h4>Bubble pop</h4>
+        <p>FFF's slogan "for family and friends" floats as glass bubbles. Reach out with your hand to pop them.</p>
+        <figure class="ratio-169" style="margin-top:16px"><img loading="lazy" src="img/rrr-sign.jpg" alt=""></figure>
+        <div class="links"><a class="pill" target="_blank" href="https://sms940574.github.io/bubble-interaction/Final_Bubble.html">Try it ↗</a></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">06 — Characters</div><div><h3>One character carried over, three new ones.</h3><p>I designed and modeled BuBu, the heroine of <i>Don't Wake Up</i>, and built the new cast on her base. I designed PiPi, PoPo and RingRing and modeled all of their outfits; teammates helped with the rest of the modeling. All four share one humanoid rig, so every animation works for every character.</p></div></div>
+    <div class="pipeline indent">
+      <div><figure><img loading="lazy" src="img/proc-sketch.jpg" alt=""></figure><div class="lbl"><b>1 Concept</b><span>Procreate</span></div></div>
+      <div><figure><img loading="lazy" src="img/pipe-02-sculpt.jpg" alt=""></figure><div class="lbl"><b>2 Sculpt</b><span>Nomad, Blender</span></div></div>
+      <div><figure><img loading="lazy" src="img/pipe-03-retopo.jpg" alt=""></figure><div class="lbl"><b>3 Retopology</b><span>Blender</span></div></div>
+      <div><figure><img loading="lazy" src="img/proc-texture.jpg" alt=""></figure><div class="lbl"><b>4 Texture</b><span>Blender</span></div></div>
+      <div><figure><img loading="lazy" src="img/pipe-05-rig.jpg" alt=""></figure><div class="lbl"><b>5 Rig</b><span>Blender</span></div></div>
+      <div><figure><img loading="lazy" src="img/pipe-06-anim.jpg" alt=""></figure><div class="lbl"><b>6 Animate</b><span>Blender</span></div></div>
+      <div><figure><img loading="lazy" src="img/pipe-07-engine.jpg" alt=""></figure><div class="lbl"><b>7 Engine</b><span>Unity</span></div></div>
+    </div>
+    <div class="gallery indent" style="margin-top:18px">
+      <figure class="g3 ratio-43"><img loading="lazy" src="img/lineup-real.jpg" alt="Characters placed in a real space"></figure>
+      <figure class="g3 ratio-43"><img loading="lazy" src="img/lineup-real2.jpg" alt="Characters placed outdoors"></figure>
+    </div>
+  </div>
+
+  <!-- EXHIBITION PHOTOS: add here when Suki sends them -->
+  <div class="block reveal">
+    <div class="block-head"><div class="num">07 — Exhibition</div><div><h3>Two weeks inside FFF.</h3><p>The game, both interactions and <i>Don't Wake Up</i> ran in the store from 5 to 19 September 2026. Storefront screens showed the game to the street, and a QR poster brought visitors straight into it.</p></div></div>
+    <div class="gallery indent">
+      <div class="g6 wide-video" style="aspect-ratio:21/6"><video autoplay muted loop playsinline preload="metadata" src="video/ex-front.mp4"></video></div>
+      <div class="g2 half phone" style="border-radius:14px"><video autoplay muted loop playsinline preload="metadata" src="video/ex-door.mp4"></video></div>
+      <div class="g2 half phone" style="border-radius:14px"><video autoplay muted loop playsinline preload="metadata" src="video/ex-pillar.mp4"></video></div>
+      <figure class="g2 ratio-34"><img loading="lazy" src="img/store-front.jpg" alt="FFF storefront"><figcaption>FFF storefront</figcaption></figure>
+      <div class="g3 wide-video" style="aspect-ratio:1/1"><video autoplay muted loop playsinline preload="metadata" src="video/ex-mainposter.mp4"></video></div>
+      <div class="g3 wide-video" style="aspect-ratio:1/1;background:#eef0ef"><video autoplay muted loop playsinline preload="metadata" src="video/ex-subposter.mp4" style="object-fit:contain"></video></div>
+    </div>
+    <div class="zones indent" style="grid-template-columns:repeat(3,1fr)">
+      <div class="zone"><b>Storefront screen</b><span><i>Don't Wake Up</i> facing the street</span></div>
+      <div class="zone"><b>Door &amp; pillar screens</b><span>Lobby and character-select scenes inside the store</span></div>
+      <div class="zone"><b>Posters</b><span>Main poster, plus a tutorial &amp; reward poster with a QR code</span></div>
+    </div>
+  </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="role" style="--accent:var(--red)">
+      <h3>What I did</h3>
+      <ul>
+        <li>Concept, game design and creative direction</li>
+        <li>Partnership and communication with FFF</li>
+        <li>Schedule and coordination of the 4-person team</li>
+        <li>Level design from the real store layout</li>
+        <li>Character design for all four; modeled BuBu and every outfit</li>
+        <li>3D modeling of the store room and furniture</li>
+        <li>Art direction, posters, storefront videos, Instagram</li>
+        <li>Gameplay features in Unity/C# with AI-assisted coding</li>
+        <li>QA on every build and playtests with outside players</li>
+        <li>All Korean in-game guide and instruction text</li>
+        <li>Planning and running the exhibition</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ DON'T WAKE UP ============ -->
+<section class="case" id="dwu"><div class="wrap">
+  <div class="case-hero reveal"><img src="img/dwu-title.jpg" alt="Don't Wake Up"></div>
+  <div class="case-title">
+    <div><span class="tag mint">Case study 02</span><h2>Don't Wake Up</h2></div>
+    <p class="one">A third-person mystery adventure set in the dream just before waking — where escaping reality and facing a new start pull in opposite directions.</p>
+  </div>
+  <dl class="facts">
+    <div><dt>My role</dt><dd>Team lead &amp; game director</dd></div>
+    <div><dt>Team</dt><dd>5 people</dd></div>
+    <div><dt>Timeline</dt><dd>Feb–May 2026</dd></div>
+    <div><dt>Platform</dt><dd>PC (Unity 6)</dd></div>
+    <div><dt>Genre</dt><dd>3rd-person mystery adventure · puzzle &amp; escape</dd></div>
+    <div><dt>Afterlife</dt><dd>Shown at the FFF exhibition at the store's request</dd></div>
+  </dl>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">01 — Why</div><div><h3>Turning fear into a place.</h3><p>Starting something new comes with excitement and fear. I put that feeling into an abstract space: the last moment of a dream before you wake up. The pressure you want to escape becomes a strange, beautiful shelter.</p></div></div>
+    <div class="three indent">
+      <div class="box"><span class="k mint">Feeling 01</span><h4>Unfamiliar</h4><p>You wake up outside a strange castle.</p></div>
+      <div class="box"><span class="k mint">Feeling 02</span><h4>Uneasy</h4><p>The further you go, the more the world bends.</p></div>
+      <div class="box"><span class="k mint">Feeling 03</span><h4>Hopeful</h4><p>The ending asks: "Do you want to wake up?"</p></div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">02 — Level design</div><div><h3>The further from reality, the stranger it gets.</h3><p>A hub-and-rooms structure that loops back to the first door. Each room adds a new ability and more distortion.</p></div></div>
+    <div class="indent">
+      <div class="flow">
+        <div class="step" style="background:#eef8f6"><b>Opening</b><span>Cinematic arrival, lost and alone</span></div>
+        <div class="step" style="background:#dff3ef"><b>Main Hall</b><span>Hub — see the whole structure</span></div>
+        <div class="step" style="background:#c9ece5"><b>Room 01</b><span>Item + dash unlock</span></div>
+        <div class="step" style="background:#b4e2da"><b>Room 02</b><span>Falling Dream mini-game, new ability</span></div>
+        <div class="step" style="background:#9fd3d6;"><b>Final Room</b><span>Use every item to escape</span></div>
+        <div class="step" style="background:#c7cbe9"><b>Ending</b><span>Back to reality</span></div>
+      </div>
+      <div class="distort">Reality<i></i>Most distorted</div>
+    </div>
+    <div class="gallery indent" style="margin-top:22px">
+      <figure class="g4 ratio-169"><img loading="lazy" src="img/dwu-room.jpg" alt="Room interior"></figure>
+      <figure class="g2 half ratio-34"><img loading="lazy" src="img/dwu-sketch2.jpg" alt="Level sketch"><figcaption>Level sketch</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">03 — Items &amp; puzzles</div><div><h3>Every item is a verb.</h3><p>Each item gives a new way to move or see. Three puzzles ask the player to combine them, and the final room needs all of them.</p></div></div>
+    <div class="items indent">
+      <div class="item"><div class="ico">🪽</div><b>Wings</b><small>Double jump · flight</small><p>Reach higher platforms and fly from jump pads.</p></div>
+      <div class="item"><div class="ico">👢</div><b>Boots</b><small>Dash</small><p>Cross gaps and move fast through the hub.</p></div>
+      <div class="item"><div class="ico">👓</div><b>Glasses</b><small>See the unseen</small><p>Toggle on to reveal hidden objects and find the real wings.</p></div>
+      <div class="item"><div class="ico">🗡️</div><b>Sword</b><small>Break obstacles</small><p>Unlocked by waking up in <i>Falling Dream</i>.</p></div>
+    </div>
+    <div class="gallery indent" style="margin-top:18px">
+      <figure class="g3 ratio-43"><img loading="lazy" src="img/dwu-wings.jpg" alt="Wing designs"></figure>
+      <figure class="g3 ratio-43"><img loading="lazy" src="img/dwu-glasses.jpg" alt="Glasses vision in game"><figcaption>Glasses on: only you and the wings stay in color</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">04 — Falling Dream (solo)</div><div><h3>A mini-game I designed and built alone.</h3><p>The player lies down on a bed and falls into a dream. Dodge obstacles while falling and the Wake Gauge fills. At 100, the fall slows, the player lands on the bed and pulls out the sword — now unlocked in the main game.</p></div></div>
+    <div class="two indent">
+      <div class="wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/fallingdream.mp4"></video></div>
+      <div class="box">
+        <span class="k mint">Core system</span><h4>Wake Gauge</h4>
+        <p>Survive the fall to fill the gauge. It ties a short arcade game to the story: you play to wake up.</p>
+        <div class="gauge"><i></i></div>
+        <div class="gauge-lbl"><span>Asleep</span><span>100 = Awake · sword unlocked</span></div>
+        <p style="margin-top:16px">I wrote the full design document — overview, core concept, systems, play flow, ending sequence and its link to the main game — and built the prototype in Unity.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">05 — Play</div><div><h3>Gameplay.</h3><p>Cold, dreamy colors. Glass, liquid and metal textures. Soft light and flowing shapes.</p></div></div>
+    <div class="gallery indent">
+      <div class="g3 wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/dwu-play4.mp4"></video></div>
+      <div class="g3 wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/talk1.mp4"></video></div>
+    </div>
+    <div class="links indent"><a class="pill" target="_blank" href="https://youtu.be/WfSu1Bc7RAM">Full gameplay video on YouTube ↗</a></div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">06 — Art</div><div><h3>From sketch to world.</h3></div></div>
+    <div class="gallery indent">
+      <figure class="g2 ratio-34"><img loading="lazy" src="img/dwu-char2.jpg" alt="Main character"></figure>
+      <figure class="g4 ratio-169" style="aspect-ratio:auto"><img loading="lazy" src="img/dwu-env.jpg" alt="Environment"></figure>
+      <figure class="g2 ratio-11"><img loading="lazy" src="img/dwu-objects.jpg" alt="Objects"></figure>
+      <figure class="g2 ratio-11"><img loading="lazy" src="img/dwu-furniture.jpg" alt="Furniture"></figure>
+      <figure class="g2 ratio-11"><img loading="lazy" src="img/dwu-ui.jpg" alt="UI design"><figcaption>UI</figcaption></figure>
+      <figure class="g2 half ratio-11"><img loading="lazy" src="img/dwu-sketch1.jpg" alt="Sketch"></figure>
+      <figure class="g2 half ratio-11"><img loading="lazy" src="img/dwu-sketch3.jpg" alt="Sketch"></figure>
+      <figure class="g2 ratio-11"><img loading="lazy" src="img/dwu-board.jpg" alt="Mood board"></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">07 — Looking back</div><div><h3>What playtesters told us.</h3></div></div>
+    <div class="indent">
+      <p class="quote">"The unique visuals and atmosphere were impressive." — "The shift from a healing mood to the Final Room worked well."<small>And what I would fix next: players said the guidance was too thin, so the flow felt unfriendly. Clearer goals and feedback are the first thing I'd add.</small></p>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="role">
+      <h3>What I did</h3>
+      <ul>
+        <li>Led the 5-person team as team lead</li>
+        <li>Concept, story and world</li>
+        <li>Level structure and flow</li>
+        <li>Item and puzzle systems</li>
+        <li><i>Falling Dream</i>: design document and Unity prototype, solo</li>
+        <li>Art direction and modeling</li>
+        <li>Gameplay programming with AI-assisted coding</li>
+        <li>Playtesting and feedback</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about"><div class="wrap about">
+  <div class="reveal">
+    <span class="eyebrow">About</span>
+    <h2 style="margin-top:14px">Fashion taught me mood. Games let me build it.</h2>
+  </div>
+  <div class="reveal">
+    <p>Before games, I ran the online select shop <b>hippiedippy</b> for 4.5 years: season concepts, buying, styling, modeling, posters, videos, Korean copy and customer service. I grew its Instagram from about 20,000 to 80,000+ followers.</p>
+    <p style="margin-top:14px">In 2026 I finished an 8-month, full-time Unity &amp; C# program and led two team projects. Now I live in Berlin on a Working Holiday Visa and I'm looking for <b>Korean localization QA</b>, <b>Korean player support</b> and <b>junior game design</b> roles.</p>
+    <div class="stats">
+      <div class="stat"><b>4.5 yrs</b><span>Brand director</span></div>
+      <div class="stat"><b>4×</b><span>Instagram growth</span></div>
+      <div class="stat"><b>2</b><span>Games led, 1 exhibited</span></div>
+    </div>
+    <div class="links">
+      <a class="pill" href="Misuk_Seo_CV_Game.pdf" target="_blank">CV (PDF) ↓</a>
+      <a class="pill" href="https://github.com/sms940574" target="_blank">GitHub ↗</a>
+      <a class="pill" href="https://www.instagram.com/b02_apt" target="_blank">Instagram @b02_apt ↗</a>
+    </div>
+    <p style="margin-top:20px;font-size:14px;color:var(--muted)">Languages: Korean (native) · English (A2, improving) · Japanese (basic)</p>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <h2>Let's make something players remember.</h2>
+  <a class="mail" href="mailto:sms940574@gmail.com">sms940574@gmail.com →</a>
+  <div class="row">
+    <div><a href="Misuk_Seo_CV_Game.pdf" target="_blank">CV</a><a href="https://github.com/sms940574" target="_blank">GitHub</a><a href="https://www.instagram.com/b02_apt" target="_blank">Instagram</a></div>
+    <span>Misuk (Suki) Seo · Berlin · 2026</span>
+  </div>
+</div></footer>
+
+<script>
+  setTimeout(()=>document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in')),2500);
+  const nav=document.getElementById('nav');
+  addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>10),{passive:true});
+  const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  // play autoplay videos only when visible
+  const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.25});
+  document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');vo.observe(v)});
+</script>
+</body>
+</html>
