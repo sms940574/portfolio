@@ -11,7 +11,7 @@
 <style>
   :root{
     --bg:#f2f2ef; --paper:#fbfbf9; --ink:#141416; --muted:#6b6d72; --line:#dcdcd6;
-    --mint:#5cc7b6; --mint-soft:#dff3ef; --red:#e2322b; --red-soft:#fbe3e1;
+    --mint:#5cc7b6; --ice:#6f86ad; --ice-soft:#e6ebf3; --mint-soft:#dff3ef; --red:#e2322b; --red-soft:#fbe3e1;
     --radius:18px; --max:1200px;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -62,6 +62,9 @@
   .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:10px}
   .tag.red{background:var(--red);color:#fff}
   .tag.mint{background:var(--mint);color:#06302a}
+  .tag.ice{background:var(--ice);color:#fff}
+  .card.wide{grid-column:span 2;aspect-ratio:21/8}
+  .k.ice{color:var(--ice)}
 
   /* case study */
   .case{padding-top:40px}
@@ -124,6 +127,9 @@
   .distort{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-top:12px;letter-spacing:.06em;text-transform:uppercase}
   .distort i{flex:1;height:2px;margin:8px 14px 0;background:linear-gradient(90deg,var(--mint-soft),var(--mint),#2c3a8c)}
 
+  .ending{list-style:none;counter-reset:e;display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .ending li{counter-increment:e;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px 18px 18px 58px;position:relative;font-family:"Space Grotesk";font-size:17px}
+  .ending li::before{content:counter(e,decimal-leading-zero);position:absolute;left:18px;top:18px;color:var(--ice);font-weight:700}
   .items{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
   .item{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:20px}
   .item .ico{width:44px;height:44px;border-radius:12px;background:var(--mint-soft);display:grid;place-items:center;font-size:22px;margin-bottom:12px}
@@ -173,11 +179,13 @@
     .wrap{padding:0 16px}
     section{padding:64px 0}
     .cards,.case-title,.two,.about{grid-template-columns:1fr}
+    .card.wide{grid-column:auto;aspect-ratio:4/3}
     .case-title{gap:16px}
     .facts{grid-template-columns:1fr 1fr}
     .block-head{grid-template-columns:1fr;gap:6px}
     .indent{margin-left:0}
     .three,.items,.zones{grid-template-columns:1fr 1fr}
+    .ending{grid-template-columns:1fr}
     .four{grid-template-columns:1fr 1fr}
     .gallery{grid-template-columns:1fr 1fr}
     .g2,.g3,.g4,.g6{grid-column:span 2}
@@ -204,6 +212,7 @@
   <ul>
     <li><a href="#rrr">RRR × FFF</a></li>
     <li><a href="#dwu">Don't Wake Up</a></li>
+    <li><a href="#fd">Falling Dream</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <a class="btn" href="Misuk_Seo_CV_Game.pdf" target="_blank">CV ↓</a>
@@ -212,7 +221,7 @@
 <header class="hero" id="top"><div class="wrap">
   <div class="eyebrow">Misuk (Suki) Seo · Berlin</div>
   <h1>I design games with the eye of a <em>creative director.</em></h1>
-  <p class="lead">Game designer from South Korea. I led two Unity projects from concept to a two-week exhibition in a Seoul select shop. Before games, I spent 4.5 years directing a fashion brand. Mood, concept and detail are how I work.</p>
+  <p class="lead">Game designer from South Korea. I led two Unity team projects and built one game solo, from concept to a two-week exhibition in a Seoul select shop. Before games, I spent 4.5 years directing a fashion brand. Mood, concept and detail are how I work.</p>
   <div class="chips">
     <span class="chip">Native Korean speaker</span>
     <span class="chip">Game design · Level design</span>
@@ -241,6 +250,10 @@
     <a class="card reveal" href="#dwu">
       <img src="img/dwu-hero.jpg" alt="Don't Wake Up title screen">
       <div class="meta"><span class="tag mint">Team lead · 5 people</span><h3>Don't Wake Up</h3><p>A mystery adventure in the dream just before waking.</p></div>
+    </a>
+    <a class="card reveal wide" href="#fd">
+      <img src="img/fd-still7.jpg" alt="Falling Dream gameplay">
+      <div class="meta"><span class="tag ice">Solo · design to build</span><h3>Falling Dream</h3><p>A falling-survival mini-game that wakes you up.</p></div>
     </a>
   </div>
 </div></section>
@@ -440,7 +453,7 @@
       <div class="item"><div class="ico">🪽</div><b>Wings</b><small>Double jump · flight</small><p>Reach higher platforms and fly from jump pads.</p></div>
       <div class="item"><div class="ico">👢</div><b>Boots</b><small>Dash</small><p>Cross gaps and move fast through the hub.</p></div>
       <div class="item"><div class="ico">👓</div><b>Glasses</b><small>See the unseen</small><p>Toggle on to reveal hidden objects and find the real wings.</p></div>
-      <div class="item"><div class="ico">🗡️</div><b>Sword</b><small>Break obstacles</small><p>Unlocked by waking up in <i>Falling Dream</i>.</p></div>
+      <div class="item"><div class="ico">🗡️</div><b>Sword</b><small>Break obstacles</small><p>Unlocked by waking up in <a href="#fd"><i>Falling Dream</i></a>, my solo mini-game.</p></div>
     </div>
     <div class="gallery indent" style="margin-top:18px">
       <figure class="g3 ratio-43"><img loading="lazy" src="img/dwu-wings.jpg" alt="Wing designs"></figure>
@@ -449,21 +462,7 @@
   </div>
 
   <div class="block reveal">
-    <div class="block-head"><div class="num">04 — Falling Dream (solo)</div><div><h3>A mini-game I designed and built alone.</h3><p>The player lies down on a bed and falls into a dream. Dodge obstacles while falling and the Wake Gauge fills. At 100, the fall slows, the player lands on the bed and pulls out the sword — now unlocked in the main game.</p></div></div>
-    <div class="two indent">
-      <div class="wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/fallingdream.mp4"></video></div>
-      <div class="box">
-        <span class="k mint">Core system</span><h4>Wake Gauge</h4>
-        <p>Survive the fall to fill the gauge. It ties a short arcade game to the story: you play to wake up.</p>
-        <div class="gauge"><i></i></div>
-        <div class="gauge-lbl"><span>Asleep</span><span>100 = Awake · sword unlocked</span></div>
-        <p style="margin-top:16px">I wrote the full design document — overview, core concept, systems, play flow, ending sequence and its link to the main game — and built the prototype in Unity.</p>
-      </div>
-    </div>
-  </div>
-
-  <div class="block reveal">
-    <div class="block-head"><div class="num">05 — Play</div><div><h3>Gameplay.</h3><p>Cold, dreamy colors. Glass, liquid and metal textures. Soft light and flowing shapes.</p></div></div>
+    <div class="block-head"><div class="num">04 — Play</div><div><h3>Gameplay.</h3><p>Cold, dreamy colors. Glass, liquid and metal textures. Soft light and flowing shapes.</p></div></div>
     <div class="gallery indent">
       <div class="g3 wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/dwu-play4.mp4"></video></div>
       <div class="g3 wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/talk1.mp4"></video></div>
@@ -472,7 +471,7 @@
   </div>
 
   <div class="block reveal">
-    <div class="block-head"><div class="num">06 — Art</div><div><h3>From sketch to world.</h3></div></div>
+    <div class="block-head"><div class="num">05 — Art</div><div><h3>From sketch to world.</h3></div></div>
     <div class="gallery indent">
       <figure class="g2 ratio-34"><img loading="lazy" src="img/dwu-char2.jpg" alt="Main character"></figure>
       <figure class="g4 ratio-169" style="aspect-ratio:auto"><img loading="lazy" src="img/dwu-env.jpg" alt="Environment"></figure>
@@ -486,7 +485,7 @@
   </div>
 
   <div class="block reveal">
-    <div class="block-head"><div class="num">07 — Looking back</div><div><h3>What playtesters told us.</h3></div></div>
+    <div class="block-head"><div class="num">06 — Looking back</div><div><h3>What playtesters told us.</h3></div></div>
     <div class="indent">
       <p class="quote">"The unique visuals and atmosphere were impressive." — "The shift from a healing mood to the Final Room worked well."<small>And what I would fix next: players said the guidance was too thin, so the flow felt unfriendly. Clearer goals and feedback are the first thing I'd add.</small></p>
     </div>
@@ -500,10 +499,112 @@
         <li>Concept, story and world</li>
         <li>Level structure and flow</li>
         <li>Item and puzzle systems</li>
-        <li><i>Falling Dream</i>: design document and Unity prototype, solo</li>
+        <li><a href="#fd"><i>Falling Dream</i></a> mini-game, solo (case study 03)</li>
         <li>Art direction and modeling</li>
         <li>Gameplay programming with AI-assisted coding</li>
         <li>Playtesting and feedback</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ FALLING DREAM ============ -->
+<section class="case" id="fd"><div class="wrap">
+  <div class="case-hero reveal" style="display:grid;grid-template-columns:2fr 1fr;gap:12px;border-radius:0">
+    <div class="wide-video" style="aspect-ratio:16/9"><video autoplay muted loop playsinline preload="metadata" src="video/fallingdream2.mp4"></video></div>
+    <figure style="aspect-ratio:auto"><img src="img/fd-hero.jpg" alt="Falling Dream mood reference"><figcaption>Mood reference</figcaption></figure>
+  </div>
+  <div class="case-title">
+    <div><span class="tag ice">Case study 03 · Solo</span><h2>Falling Dream</h2></div>
+    <p class="one">A dream of endless falling before you wake. A short survival mini-game I designed, built and wired into <i>Don't Wake Up</i> on my own.</p>
+  </div>
+  <dl class="facts">
+    <div><dt>My role</dt><dd>Everything: design, art direction, Unity build, integration</dd></div>
+    <div><dt>Team</dt><dd>Solo</dd></div>
+    <div><dt>Timeline</dt><dd>Mar–Apr 2026</dd></div>
+    <div><dt>Platform</dt><dd>PC (Unity), playable inside <i>Don't Wake Up</i></dd></div>
+    <div><dt>Genre</dt><dd>Casual survival mini-game · 2.5D falling</dd></div>
+    <div><dt>Shown</dt><dd>Displayed at the FFF exhibition, Sep 2026</dd></div>
+  </dl>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">01 — Concept</div><div><h3>Falling, but not scary.</h3><p>A 3D character falls through a 2D space and dodges obstacles. Light, cute motions keep the tension low, so anyone who likes quick casual games can pick it up.</p></div></div>
+    <div class="three indent">
+      <div class="box"><span class="k ice">Play</span><h4>2.5D falling</h4><p>A 3D character in a flat, endless fall. Obstacles come from every side.</p></div>
+      <div class="box"><span class="k ice">Controls</span><h4>Four keys only</h4><p>Up, down, left, right. No tutorial needed beyond one on-screen hint.</p></div>
+      <div class="box"><span class="k ice">Mood</span><h4>Cold and hushed</h4><p>A cold, quiet dream space with heavy, sunken air, softened by playful character motion.</p></div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">02 — System</div><div><h3>You play to wake up.</h3><p>The mini-game is not a side activity. It is a story device that moves the player from reality into a dream and back, and it changes what they can do in the main game.</p></div></div>
+    <div class="two indent">
+      <div class="box">
+        <span class="k ice">Core system</span><h4>Wake Gauge</h4>
+        <p>Keep dodging while you fall and the gauge rises. At 100 you wake up and the game is cleared.</p>
+        <div class="gauge"><i></i></div>
+        <div class="gauge-lbl"><span>Asleep</span><span>100 = Awake</span></div>
+      </div>
+      <div class="box">
+        <span class="k ice">Link to the main game</span><h4>Item unlock</h4>
+        <p>Clearing the dream unlocks the sword in <i>Don't Wake Up</i>. The sword breaks obstacles there, so this short game opens the path forward in the main story.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">03 — Play flow</div><div><h3>From reality into the dream, and back.</h3></div></div>
+    <div class="indent">
+      <div class="flow">
+        <div class="step" style="background:#eef1f6"><b>01</b><span>Find a sword stuck in the bed frame</span></div>
+        <div class="step" style="background:#e3e9f2"><b>02</b><span>It's locked — you can't take it yet</span></div>
+        <div class="step" style="background:#d6deec"><b>03</b><span>Touch the bed and fall into the dream</span></div>
+        <div class="step" style="background:#c8d2e5"><b>04</b><span>Dodge obstacles while falling</span></div>
+        <div class="step" style="background:#b9c6df"><b>05</b><span>Wake Gauge hits 100 — clear</span></div>
+        <div class="step" style="background:#aab9d8"><b>06</b><span>The sword is unlocked</span></div>
+      </div>
+    </div>
+    <div class="gallery indent" style="margin-top:22px">
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/fd-bed.jpg" alt="The bed in Don't Wake Up"><figcaption>The bed in the main game</figcaption></figure>
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/fd-still0.jpg" alt="Entering the dream"><figcaption>Entering the dream</figcaption></figure>
+      <figure class="g2 ratio-169"><img loading="lazy" src="img/fd-still6.jpg" alt="On-screen control hint"><figcaption>One on-screen hint</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">04 — Ending</div><div><h3>A slow landing.</h3><p>I designed the clear as a short cinematic, so the reward feels like waking from a real dream.</p></div></div>
+    <div class="indent">
+      <ol class="ending">
+        <li>The fall slows down</li>
+        <li>The player lands on the bed</li>
+        <li>The sword appears in the headboard</li>
+        <li>The player reaches out and grabs it</li>
+        <li>Fade to black</li>
+        <li>Back to reality, sword in hand</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">05 — Play</div><div><h3>Gameplay.</h3></div></div>
+    <div class="gallery indent">
+      <div class="g4 wide-video"><video autoplay muted loop playsinline preload="metadata" src="video/fallingdream.mp4"></video></div>
+      <figure class="g2 ratio-11"><img loading="lazy" src="img/fd-still1.jpg" alt="Falling Dream gameplay" style="object-position:40% 50%"></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="role" style="--accent:var(--ice)">
+      <h3>What I did</h3>
+      <ul>
+        <li>Concept and the full design document</li>
+        <li>Wake Gauge and item-unlock systems</li>
+        <li>Obstacle and difficulty design</li>
+        <li>Play flow and ending cinematic</li>
+        <li>Art direction and mood</li>
+        <li>Unity build with AI-assisted coding</li>
+        <li>Integration into <i>Don't Wake Up</i></li>
+        <li>Testing and tuning</li>
       </ul>
     </div>
   </div>
@@ -521,7 +622,7 @@
     <div class="stats">
       <div class="stat"><b>4.5 yrs</b><span>Brand director</span></div>
       <div class="stat"><b>4×</b><span>Instagram growth</span></div>
-      <div class="stat"><b>2</b><span>Games led, 1 exhibited</span></div>
+      <div class="stat"><b>3</b><span>Games: 2 led, 1 solo</span></div>
     </div>
     <div class="links">
       <a class="pill" href="Misuk_Seo_CV_Game.pdf" target="_blank">CV (PDF) ↓</a>
