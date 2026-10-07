@@ -52,18 +52,18 @@
   section{padding:88px 0}
   .sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:32px}
   .sec-head h2{font-size:clamp(32px,4vw,52px)}
-  .cards{display:grid;grid-template-columns:1fr 1fr;gap:22px}
-  .card{position:relative;display:block;border-radius:var(--radius);overflow:hidden;text-decoration:none;background:#000;aspect-ratio:4/3}
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{position:relative;display:block;border-radius:var(--radius);overflow:hidden;text-decoration:none;background:#000;aspect-ratio:4/5;max-height:calc(100vh - 230px);min-height:340px;width:100%}
   .card img{width:100%;height:100%;object-fit:cover;transition:transform .6s,opacity .3s;opacity:.92}
   .card:hover img{transform:scale(1.04);opacity:1}
-  .card .meta{position:absolute;left:0;right:0;bottom:0;padding:26px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
-  .card h3{font-size:30px}
+  .card .meta{position:absolute;left:0;right:0;bottom:0;padding:22px;color:#fff;background:linear-gradient(transparent,rgba(0,0,0,.72))}
+  .card h3{font-size:26px}
   .card p{font-size:15px;opacity:.9}
   .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:99px;margin-bottom:10px}
   .tag.red{background:var(--red);color:#fff}
   .tag.mint{background:var(--mint);color:#06302a}
   .tag.ice{background:var(--ice);color:#fff}
-  .card.wide{grid-column:span 2;aspect-ratio:21/8}
+  .card.wide{}
   .k.ice{color:var(--ice)}
 
   /* case study */
@@ -179,7 +179,7 @@
     .wrap{padding:0 16px}
     section{padding:64px 0}
     .cards,.case-title,.two,.about{grid-template-columns:1fr}
-    .card.wide{grid-column:auto;aspect-ratio:4/3}
+    .card,.card.wide{aspect-ratio:4/3;max-height:none;min-height:0}
     .case-title{gap:16px}
     .facts{grid-template-columns:1fr 1fr}
     .block-head{grid-template-columns:1fr;gap:6px}
@@ -240,7 +240,7 @@
   </div>
 </div></header>
 
-<section id="work"><div class="wrap">
+<section id="work" style="padding-top:56px"><div class="wrap">
   <div class="sec-head"><h2>Selected work</h2><span class="eyebrow">2026</span></div>
   <div class="cards">
     <a class="card reveal" href="#rrr">
