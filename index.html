@@ -667,6 +667,41 @@
   // play autoplay videos only when visible
   const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.25});
   document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');vo.observe(v)});
+
+  // Space / PageUp / PageDown: move one "page" at a time, landing on section starts, no overlap under the sticky nav
+  (function(){
+    const NAV=64, EPS=4;
+    const points=()=>{
+      const sel='#top,#work,.case,.case-title,.block,#about,footer';
+      const ys=[...document.querySelectorAll(sel)].map(el=>Math.round(el.getBoundingClientRect().top+scrollY-(el.id==='top'?0:NAV)));
+      ys.push(0, document.documentElement.scrollHeight-innerHeight);
+      return [...new Set(ys.map(y=>Math.max(0,Math.min(y,document.documentElement.scrollHeight-innerHeight))))].sort((a,b)=>a-b);
+    };
+    let target=null, timer=null;
+    addEventListener('keydown',e=>{
+      const t=e.target;
+      if(t&&(t.isContentEditable||/^(INPUT|TEXTAREA|SELECT|BUTTON|VIDEO)$/.test(t.tagName)))return;
+      if(e.metaKey||e.ctrlKey||e.altKey)return;
+      let dir=0;
+      if(e.key===' '||e.code==='Space')dir=e.shiftKey?-1:1;
+      else if(e.key==='PageDown')dir=1; else if(e.key==='PageUp')dir=-1;
+      if(!dir)return;
+      e.preventDefault();
+      const cur=target??scrollY, page=innerHeight-NAV, pts=points();
+      let next;
+      if(dir>0){
+        const p=pts.find(y=>y>cur+EPS);
+        next=(p===undefined)?cur+page:Math.min(p,cur+page);
+      }else{
+        const p=[...pts].reverse().find(y=>y<cur-EPS);
+        next=(p===undefined)?cur-page:Math.max(p,cur-page);
+      }
+      next=Math.max(0,Math.min(next,document.documentElement.scrollHeight-innerHeight));
+      target=next;
+      scrollTo({top:next,behavior:'smooth'});
+      clearTimeout(timer); timer=setTimeout(()=>target=null,700);
+    });
+  })();
 </script>
 </body>
 </html>
