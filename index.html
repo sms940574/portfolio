@@ -673,7 +673,8 @@
     const NAV=64, EPS=4;
     const points=()=>{
       const sel='#top,#work,.case,.case-title,.block,#about,footer';
-      const ys=[...document.querySelectorAll(sel)].map(el=>Math.round(el.getBoundingClientRect().top+scrollY-(el.id==='top'?0:NAV)));
+      const abs=el=>{let y=0;for(let e=el;e;e=e.offsetParent)y+=e.offsetTop;return y};
+      const ys=[...document.querySelectorAll(sel)].map(el=>el.id==='top'?0:abs(el)-NAV);
       ys.push(0, document.documentElement.scrollHeight-innerHeight);
       return [...new Set(ys.map(y=>Math.max(0,Math.min(y,document.documentElement.scrollHeight-innerHeight))))].sort((a,b)=>a-b);
     };
