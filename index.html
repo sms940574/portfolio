@@ -185,6 +185,22 @@
     #work .card{aspect-ratio:auto;height:100%;max-height:none;min-height:0}
   }
 
+  /* case opener = one screen (desktop) */
+  @media (min-width:901px){
+    section.case{padding-top:0}
+    .case-open{height:calc(100svh - 64px);min-height:640px;display:flex;flex-direction:column;padding:22px 0 16px}
+    .case-open .case-hero{flex:1;min-height:0}
+    .case-open .case-hero > img{height:100%;max-height:none}
+    .case-open .case-hero[style*="grid"]{height:100%}
+    .case-open .case-hero[style*="grid"] > *{height:100%;aspect-ratio:auto!important;min-height:0}
+    .case-open .case-title{grid-template-columns:auto minmax(0,640px);justify-content:start;align-items:end;gap:clamp(28px,4vw,72px);margin:22px 0 0}
+    .case-open .case-title h2{font-size:clamp(44px,5.2vw,88px)}
+    .case-open .case-title .one{font-size:clamp(17px,1.4vw,22px);padding-bottom:6px}
+    .case-open .facts{grid-template-columns:repeat(6,1fr);margin-top:18px;column-gap:18px}
+    .case-open .facts div{padding:12px 0}
+    .case-open .facts dd{font-size:14.5px;line-height:1.4}
+  }
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.gauge i{animation:none;width:100%}}
 
@@ -276,6 +292,7 @@
 
 <!-- ============ RRR × FFF ============ -->
 <section class="case" id="rrr"><div class="wrap">
+  <div class="case-open">
   <div class="case-hero reveal" style="display:grid;grid-template-columns:1fr 2.1fr;gap:12px;border-radius:0">
     <div class="phone" style="aspect-ratio:auto;border-radius:14px;background:#e7e9e8"><video autoplay muted loop playsinline preload="metadata" src="video/ex-mainposter.mp4"></video></div>
     <figure style="aspect-ratio:16/10"><img src="img/rrr-wall.jpg" alt="RRR × FFF in-game"></figure>
@@ -292,6 +309,7 @@
     <div><dt>Tools</dt><dd>Unity, Blender, Nomad Sculpt, Claude, three.js</dd></div>
     <div><dt>Result</dt><dd>In-store exhibition at FFF, 5–19 Sep 2026</dd></div>
   </dl>
+  </div>
 
   <div class="block reveal">
     <div class="block-head"><div class="num">01 — Problem</div><div><h3>A photo zone ends after one photo.</h3><p>FFF already had a strong space and a loyal community. But the in-store experience stopped at a static photo spot, and the brand lost contact with visitors once they left Itaewon.</p></div></div>
@@ -421,6 +439,7 @@
 
 <!-- ============ DON'T WAKE UP ============ -->
 <section class="case" id="dwu"><div class="wrap">
+  <div class="case-open">
   <div class="case-hero reveal"><img src="img/dwu-title.jpg" alt="Don't Wake Up"></div>
   <div class="case-title">
     <div><span class="tag mint">Case study 02</span><h2>Don't Wake Up</h2></div>
@@ -434,6 +453,7 @@
     <div><dt>Genre</dt><dd>3rd-person mystery adventure · puzzle &amp; escape</dd></div>
     <div><dt>Afterlife</dt><dd>Shown at the FFF exhibition at the store's request</dd></div>
   </dl>
+  </div>
 
   <div class="block reveal">
     <div class="block-head"><div class="num">01 — Why</div><div><h3>Turning fear into a place.</h3><p>Starting something new comes with excitement and fear. I put that feeling into an abstract space: the last moment of a dream before you wake up. The pressure you want to escape becomes a strange, beautiful shelter.</p></div></div>
@@ -526,6 +546,7 @@
 
 <!-- ============ FALLING DREAM ============ -->
 <section class="case" id="fd"><div class="wrap">
+  <div class="case-open">
   <div class="case-hero reveal" style="display:grid;grid-template-columns:2fr 1fr;gap:12px;border-radius:0">
     <div class="wide-video" style="aspect-ratio:16/9"><video autoplay muted loop playsinline preload="metadata" src="video/fallingdream2.mp4"></video></div>
     <figure style="aspect-ratio:auto"><img src="img/fd-hero.jpg" alt="Falling Dream mood reference"><figcaption>Mood reference</figcaption></figure>
@@ -542,6 +563,7 @@
     <div><dt>Genre</dt><dd>Casual survival mini-game · 2.5D falling</dd></div>
     <div><dt>Shown</dt><dd>Displayed at the FFF exhibition, Sep 2026</dd></div>
   </dl>
+  </div>
 
   <div class="block reveal">
     <div class="block-head"><div class="num">01 — Concept</div><div><h3>Falling, but not scary.</h3><p>A 3D character falls through a 2D space and dodges obstacles. Light, cute motions keep the tension low, so anyone who likes quick casual games can pick it up.</p></div></div>
@@ -672,7 +694,7 @@
   (function(){
     const NAV=64, EPS=4;
     const points=()=>{
-      const sel='#top,#work,.case,.case-title,.block,#about,footer';
+      const sel='#top,#work,.case,.block,#about,footer';
       const abs=el=>{let y=0;for(let e=el;e;e=e.offsetParent)y+=e.offsetTop;return y};
       const ys=[...document.querySelectorAll(sel)].map(el=>el.id==='top'?0:abs(el)-NAV);
       ys.push(0, document.documentElement.scrollHeight-innerHeight);
