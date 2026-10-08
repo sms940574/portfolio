@@ -154,6 +154,8 @@
   .links{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
   .pill{display:inline-flex;gap:8px;align-items:center;font-size:14px;font-weight:500;padding:9px 15px;border-radius:99px;border:1px solid var(--ink);text-decoration:none}
   .pill:hover{background:var(--ink);color:#fff}
+  .pill.solid{background:var(--ink);color:#fff}
+  .pill.solid:hover{background:var(--red);border-color:var(--red)}
   .divider{height:1px;background:var(--line);margin:24px 0 0}
 
   /* about */
@@ -225,6 +227,19 @@
   #lb .cap{position:absolute;bottom:16px;left:0;right:0;text-align:center;color:#d9d9dd;font-size:14px}
   @media (max-width:900px){#lb{padding:56px 12px}#lb .prev,#lb .next{top:auto;bottom:12px;transform:none}}
 
+  .tbl{width:100%;border-collapse:collapse;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+  .tbl th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:12px 16px;border-bottom:1px solid var(--line);background:#f6f6f3}
+  .tbl td{padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl tr:last-child td{border-bottom:0}
+  .tbl td:first-child{font-weight:500}
+  mark{background:#ffe7a8;border-radius:4px;padding:0 3px}
+  .badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;background:var(--ice-soft);color:#3b4f74;white-space:nowrap}
+  .report dl{display:grid;grid-template-columns:120px 1fr;gap:8px 14px;margin-top:12px;font-size:14.5px}
+  .report dt{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding-top:2px}
+  .gallery .doc{grid-column:span 1!important}
+  .gallery:has(.doc){grid-template-columns:repeat(4,1fr)}
+  @media (max-width:900px){.tbl{font-size:14px}.tbl th,.tbl td{padding:10px}.report dl{grid-template-columns:1fr}.gallery:has(.doc){grid-template-columns:1fr 1fr}}
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.gauge i{animation:none;width:100%}}
 
@@ -266,6 +281,7 @@
     <li><a href="#rrr">RRR × FFF</a></li>
     <li><a href="#dwu">Don't Wake Up</a></li>
     <li><a href="#fd">Falling Dream</a></li>
+    <li><a href="#korean">Korean QA</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <a class="btn" href="Misuk_Seo_CV_Game.pdf" target="_blank">CV ↓</a>
@@ -277,7 +293,7 @@
   <h1>I design games with the eye of a <em>creative director.</em></h1>
   <p class="lead">Game designer from South Korea. I led two Unity team projects and built one game solo, from concept to a two-week exhibition in a Seoul select shop. Before games, I spent 4.5 years directing a fashion brand. Mood, concept and detail are how I work.</p>
   <div class="chips">
-    <span class="chip">Native Korean speaker</span>
+    <a class="chip" href="#korean" style="text-decoration:none">Native Korean speaker →</a>
     <span class="chip">Game design · Level design</span>
     <span class="chip">QA &amp; playtesting</span>
     <span class="chip">AI-assisted prototyping</span>
@@ -322,7 +338,7 @@
   </div>
   <div class="case-title">
     <div><span class="tag red">Case study 01</span><h2>RRR × FFF</h2></div>
-    <p class="one">I turned the select shop FFF in Itaewon, Seoul into a racing game — and brought the game back into the store for a two-week exhibition.</p>
+    <div><p class="one">I turned the select shop FFF in Itaewon, Seoul into a racing game — and brought the game back into the store for a two-week exhibition.</p><div class="links" style="margin-top:12px"><a class="pill solid" href="https://rrrxfff.nbing.net" target="_blank">▶ Play it in your browser ↗</a></div></div>
   </div>
   <dl class="facts">
     <div><dt>My role</dt><dd>Lead game designer &amp; director</dd></div>
@@ -379,6 +395,7 @@
       <div class="phone"><video autoplay muted loop playsinline preload="metadata" src="video/adventure-only.mp4"></video></div>
       <div class="phone"><video autoplay muted loop playsinline preload="metadata" src="video/insta-2.mp4"></video></div>
     </div>
+    <div class="links indent"><a class="pill solid" href="https://rrrxfff.nbing.net" target="_blank">▶ Play it in your browser ↗</a></div>
   </div>
 
   <div class="block reveal">
@@ -438,6 +455,18 @@
       <div class="zone"><b>Posters</b><span>Main poster, plus a tutorial &amp; reward poster with a QR code</span></div>
     </div>
   </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">08 — Planning docs</div><div><h3>Written before it was built.</h3><p>Pages from my 29-page planning deck (in Korean): overview, the Run–Rest–Refresh concept, the online-to-offline loop, the 7-step player journey, level design and the 10-week roadmap. Click any page to read it large.</p></div></div>
+    <div class="gallery indent">
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/doc-rrr-3.jpg" alt="Planning deck: project overview"><figcaption>Overview</figcaption></figure>
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/doc-rrr-8.jpg" alt="Planning deck: Run, Rest, Refresh"><figcaption>Concept</figcaption></figure>
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/doc-rrr-11.jpg" alt="Planning deck: O2O loop"><figcaption>O2O loop</figcaption></figure>
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/doc-rrr-12.jpg" alt="Planning deck: 7-step play flow"><figcaption>Player journey</figcaption></figure>
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/doc-rrr-15.jpg" alt="Planning deck: level design"><figcaption>Level design</figcaption></figure>
+      <figure class="g2 half ratio-169"><img loading="lazy" src="img/doc-rrr-25.jpg" alt="Planning deck: roadmap"><figcaption>Roadmap</figcaption></figure>
+    </div>
   </div>
 
   <div class="block reveal">
@@ -547,6 +576,16 @@
     <div class="block-head"><div class="num">06 — Looking back</div><div><h3>What playtesters told us.</h3></div></div>
     <div class="indent">
       <p class="quote">"The unique visuals and atmosphere were impressive." — "The shift from a healing mood to the Final Room worked well."<small>And what I would fix next: players said the guidance was too thin, so the flow felt unfriendly. Clearer goals and feedback are the first thing I'd add.</small></p>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">07 — Design document</div><div><h3>Every room, line by line.</h3><p>My level and narrative design doc (in Korean): what the player sees, thinks and says in each space, and the systems that unlock there.</p></div></div>
+    <div class="gallery indent">
+      <figure class="g2 half doc" style="aspect-ratio:1192/1686"><img loading="lazy" src="img/doc-dwu-2.jpg" alt="Design doc: Outside, opening"><figcaption>Opening</figcaption></figure>
+      <figure class="g2 half doc" style="aspect-ratio:1192/1686"><img loading="lazy" src="img/doc-dwu-3.jpg" alt="Design doc: Main Hall"><figcaption>Main Hall</figcaption></figure>
+      <figure class="g2 half doc" style="aspect-ratio:1192/1686"><img loading="lazy" src="img/doc-dwu-6.jpg" alt="Design doc: items and Room 2"><figcaption>Items &amp; Room 2</figcaption></figure>
+      <figure class="g2 half doc" style="aspect-ratio:1192/1686"><img loading="lazy" src="img/doc-dwu-9.jpg" alt="Design doc: ending and structure"><figcaption>Ending</figcaption></figure>
     </div>
   </div>
 
@@ -667,6 +706,99 @@
         <li>Integration into <i>Don't Wake Up</i></li>
         <li>Testing and tuning</li>
       </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ============ KOREAN QA ============ -->
+<section class="case" id="korean"><div class="wrap">
+  <div class="case-title" style="margin-top:0">
+    <div><span class="tag" style="background:var(--ink);color:#fff">For Korean LQA &amp; player support</span><h2>Korean QA</h2></div>
+    <p class="one">Native Korean, an eye for small mistakes, and years of talking with players and customers — shown with real material from my own games.</p>
+  </div>
+  <dl class="facts">
+    <div><dt>Korean</dt><dd>Native · wrote all in-game Korean text in my projects</dd></div>
+    <div><dt>QA</dt><dd>Tested every build; fixed bugs across 3 games</dd></div>
+    <div><dt>Player care</dt><dd>4.5 years of Korean customer service</dd></div>
+    <div><dt>Community</dt><dd>Korean voice for an 80,000+ follower brand</dd></div>
+    <div><dt>Tools</dt><dd>Unity, Git, CSV string tables, Cafe24</dd></div>
+    <div><dt>Other languages</dt><dd>English A2 (improving) · Japanese basic</dd></div>
+  </dl>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">01 — Writing</div><div><h3>I write the Korean players read.</h3><p>In <i>Don't Wake Up</i> I wrote the dialogue and item text and kept it in CSV string tables (dialogue, branches, choices), so text lives outside the code and can be checked and translated line by line.</p></div></div>
+    <div class="indent">
+      <table class="tbl">
+        <thead><tr><th>Korean (as shipped)</th><th>Meaning</th><th>Why it's written this way</th></tr></thead>
+        <tbody>
+          <tr><td>여긴… 대체 어디?..</td><td>"Where… am I?"</td><td>Inner monologue: short, broken, dazed — the player just woke up.</td></tr>
+          <tr><td>핸드폰을 발견했다. 필요할지도 모르겠다.</td><td>"Found a phone. Might need it."</td><td>Plain narration ending (-다) for item discovery, so it reads like a note to yourself.</td></tr>
+          <tr><td>안녕? 오랜만이네. 넌 다시 해낼 수 있을거야.</td><td>"Hey. Long time no see. You can do it again."</td><td>The caterpillar NPC uses warm casual speech (반말): an old friend, not a stranger.</td></tr>
+          <tr><td>그게.. 무슨 말이지?.. / 난 아직 준비가 안됐어..</td><td>"What… do you mean?" / "I'm not ready yet…"</td><td>Choice buttons: kept short so they fit, and both sound like the same person.</td></tr>
+          <tr><td>신비한 안경 — 착용하면 보이지 않는 것을 볼 수 있다. [E]키를 눌러 On/Off 한다.</td><td>"Mysterious Glasses — wear them to see what's hidden. Press [E] to toggle."</td><td>Item name, effect, then the key prompt in one fixed format, the same for every item.</td></tr>
+        </tbody>
+      </table>
+      <figure class="ratio-169" style="margin-top:16px;max-width:820px"><img loading="lazy" src="img/dwu-room.jpg" alt="Item text in game"><figcaption>Item text in game</figcaption></figure>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">02 — LQA pass</div><div><h3>Proofreading my own build.</h3><p>Looking back at my shipped text with an LQA eye, these are the issues I would log today. Spacing (띄어쓰기) and consistency are where Korean text most often breaks.</p></div></div>
+    <div class="indent">
+      <table class="tbl">
+        <thead><tr><th>As shipped</th><th>Corrected</th><th>Type</th><th>Note</th></tr></thead>
+        <tbody>
+          <tr><td>성 쪽으로 걸어갈 수 <mark>밖에</mark> 없다</td><td>걸어갈 <mark>수밖에</mark> 없다</td><td><span class="badge">Spacing</span></td><td>밖에 is a particle here and attaches to 수.</td></tr>
+          <tr><td>뭔가 <mark>있는것같다</mark></td><td><mark>있는 것 같다</mark></td><td><span class="badge">Spacing</span></td><td>것 (bound noun) and 같다 are separate words.</td></tr>
+          <tr><td>다시 알게 <mark>될거야</mark></td><td>알게 <mark>될 거야</mark></td><td><span class="badge">Spacing</span></td><td>거 is a bound noun: 될 거야.</td></tr>
+          <tr><td>준비가 <mark>안됐어</mark></td><td>준비가 <mark>안 됐어</mark></td><td><span class="badge">Meaning</span></td><td>안되다 (one word) means "pitiful"; here it is 안 + 되다, "not ready".</td></tr>
+          <tr><td><mark>…</mark> / <mark>..</mark> / <mark>...</mark></td><td>One style: …</td><td><span class="badge">Consistency</span></td><td>Three ellipsis styles in one script. Pick one and apply it everywhere.</td></tr>
+          <tr><td>이 <mark>큐알</mark>을 찍고</td><td>이 <mark>QR 코드</mark>를 찍고</td><td><span class="badge">Terminology</span></td><td>Use the term players see on screen and in UI, everywhere.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">03 — Bug reports</div><div><h3>Bugs I found and fixed.</h3><p>Real entries from my commit history, written up the way I would file them for a QA team.</p></div></div>
+    <div class="two indent">
+      <div class="box report">
+        <span class="k ice">Example report</span>
+        <h4>Character passes through the sofa obstacle</h4>
+        <dl>
+          <dt>Game / area</dt><dd><i>Falling Dream</i> · falling stage</dd>
+          <dt>Steps</dt><dd>1. Enter the dream from the bed.<br>2. Fall into a sofa obstacle.</dd>
+          <dt>Expected</dt><dd>The player hits the sofa and has to dodge it.</dd>
+          <dt>Actual</dt><dd>The player falls straight through it. The obstacle has no effect.</dd>
+          <dt>Cause / fix</dt><dd>The character was on a collision layer that ignored obstacles. Removed it from that layer.</dd>
+          <dt>Severity</dt><dd>High — breaks the core challenge</dd>
+          <dt>Status</dt><dd>Fixed · Aug 2026</dd>
+        </dl>
+      </div>
+      <div>
+        <table class="tbl">
+          <thead><tr><th>Game</th><th>Issue</th><th>Type</th></tr></thead>
+          <tbody>
+            <tr><td>RRR × FFF</td><td>Character name images on the race ranking board had different sizes</td><td><span class="badge">UI</span></td></tr>
+            <tr><td>RRR × FFF</td><td>"Ready" text in the lobby was blurry and too small</td><td><span class="badge">Text</span></td></tr>
+            <tr><td>RRR × FFF</td><td>An empty hint box appeared in Adventure mode on PC</td><td><span class="badge">UI</span></td></tr>
+            <tr><td>RRR × FFF</td><td>Mode-select screen overlapped the screen behind it after login</td><td><span class="badge">UI</span></td></tr>
+            <tr><td>RRR × FFF</td><td>Rank HUD overlapped other HUD elements</td><td><span class="badge">UI</span></td></tr>
+            <tr><td>Don't Wake Up</td><td>Inventory would not open</td><td><span class="badge">Function</span></td></tr>
+            <tr><td>Don't Wake Up</td><td>Butterfly outline left a ghost image in Room 2</td><td><span class="badge">Visual</span></td></tr>
+          </tbody>
+        </table>
+        <p style="font-size:13px;color:var(--muted);margin-top:8px">All fixed by me, 2026.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="block reveal">
+    <div class="block-head"><div class="num">04 — Player care</div><div><h3>4.5 years on the other side of the inbox.</h3><p>At the fashion brand hippiedippy I answered customer questions every day through Cafe24, handled order problems, and wrote every Korean post for a community of 80,000+. In player support the product changes, but the job is the same: calm, clear, friendly Korean, fast.</p></div></div>
+    <div class="three indent">
+      <div class="box"><span class="k">Daily</span><h4>Customer inquiries</h4><p>Questions, order issues and shipping, in Korean, for 4.5 years.</p></div>
+      <div class="box"><span class="k">Voice</span><h4>One brand tone</h4><p>All product texts and Instagram posts written by me, in one consistent voice.</p></div>
+      <div class="box"><span class="k">Feedback</span><h4>From players to fixes</h4><p>I ran playtests, collected what confused players, and turned it into fixes.</p></div>
     </div>
   </div>
 </div></section>
