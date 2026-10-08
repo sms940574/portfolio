@@ -199,6 +199,7 @@
     .case-open .facts{grid-template-columns:repeat(6,1fr);margin-top:18px;column-gap:18px}
     .case-open .facts div{padding:12px 0}
     .case-open .facts dd{font-size:14.5px;line-height:1.4}
+    .case-open + .block{margin-top:0;padding-top:36px}
   }
 
   .reveal{transition:opacity .8s ease,transform .8s ease}
@@ -714,10 +715,10 @@
       let next;
       if(dir>0){
         const p=pts.find(y=>y>cur+EPS);
-        next=(p===undefined)?cur+page:(p<=cur+page+80?p:cur+page);
+        next=(p===undefined)?cur+page:(p<=cur+page+100?p:cur+page);
       }else{
         const p=[...pts].reverse().find(y=>y<cur-EPS);
-        next=(p===undefined)?cur-page:(p>=cur-page-80?p:cur-page);
+        next=(p===undefined)?cur-page:(p>=cur-page-100?p:cur-page);
       }
       next=Math.max(0,Math.min(next,document.documentElement.scrollHeight-innerHeight));
       target=next;
