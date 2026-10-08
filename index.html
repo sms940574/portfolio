@@ -692,10 +692,10 @@
       let next;
       if(dir>0){
         const p=pts.find(y=>y>cur+EPS);
-        next=(p===undefined)?cur+page:Math.min(p,cur+page);
+        next=(p===undefined)?cur+page:(p<=cur+page+80?p:cur+page);
       }else{
         const p=[...pts].reverse().find(y=>y<cur-EPS);
-        next=(p===undefined)?cur-page:Math.max(p,cur-page);
+        next=(p===undefined)?cur-page:(p>=cur-page-80?p:cur-page);
       }
       next=Math.max(0,Math.min(next,document.documentElement.scrollHeight-innerHeight));
       target=next;
