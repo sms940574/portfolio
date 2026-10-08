@@ -106,7 +106,7 @@
   .zone b{font-family:"Space Grotesk";display:block}
   .zone span{font-size:14px;color:var(--muted)}
 
-  .phones{display:grid;grid-template-columns:2fr 1fr 1fr;gap:16px;align-items:start}
+  .phones{display:grid;grid-template-columns:repeat(3,minmax(0,360px));gap:16px;align-items:start}
   .phone{border-radius:22px;overflow:hidden;background:#111;aspect-ratio:9/16}
   .phone video{width:100%;height:100%;object-fit:cover}
   .wide-video{border-radius:14px;overflow:hidden;background:#111;aspect-ratio:16/9}
@@ -202,6 +202,11 @@
     .case-open + .block{margin-top:0;padding-top:36px}
   }
 
+  /* never crop: show whole images and videos inside their frames */
+  figure{background:#e9e9e4}
+  figure img,figure video,.phone video,.wide-video video,.case-hero video,.case-hero img{object-fit:contain!important}
+  .phone,.wide-video{background:#e9e9e4}
+
   .reveal{transition:opacity .8s ease,transform .8s ease}
   @media (prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}.gauge i{animation:none;width:100%}}
 
@@ -223,7 +228,6 @@
     .gallery .g2.half{grid-column:span 1}
     .pipeline{grid-template-columns:repeat(4,1fr)}
     .phones{grid-template-columns:1fr 1fr}
-    .phones .wide-video{grid-column:span 2}
     .flow{grid-template-columns:1fr 1fr}
     .step{margin:0 8px 8px 0}
     .step::after{display:none}
@@ -353,7 +357,7 @@
   <div class="block reveal">
     <div class="block-head"><div class="num">04 — Play</div><div><h3>Understood in 30 seconds.</h3><p>Nobody reads a tutorial in a shop. The controls are a virtual joystick, jump and dash. Everything is vertical 1080×1920, so every clip a player records is ready for Reels and TikTok.</p></div></div>
     <div class="phones indent">
-      <div class="wide-video"><video controls preload="metadata" playsinline poster="img/poster-trailer.jpg" src="https://sms940574.github.io/fffXrrr-Web/media/trailer.mp4"></video></div>
+      <div class="phone"><video controls preload="metadata" playsinline poster="img/poster-trailer.jpg" src="https://sms940574.github.io/fffXrrr-Web/media/trailer.mp4"></video></div>
       <div class="phone"><video autoplay muted loop playsinline preload="metadata" src="video/adventure-only.mp4"></video></div>
       <div class="phone"><video autoplay muted loop playsinline preload="metadata" src="video/insta-2.mp4"></video></div>
     </div>
