@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Misuk (Suki) Seo — CV</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  @page { size: A4; margin: 14mm 16mm 16mm; }
+  :root {
+    --ink: #16161d;
+    --muted: #5d5f6b;
+    --line: #e3e3ea;
+    --accent: #4b3fd8;
+    --accent-soft: #eeecff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #fff; }
+  body {
+    font-family: "Inter", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.2pt;
+    line-height: 1.42;
+    -webkit-print-color-adjust: exact; print-color-adjust: exact;
+  }
+  .page { width: 100%; }
+  a { color: inherit; text-decoration: none; }
+
+  /* Header */
+  header { display: grid; grid-template-columns: 1fr auto; gap: 8mm; align-items: end;
+           padding-bottom: 6mm; border-bottom: 2px solid var(--ink); }
+  .name { font-family: "Space Grotesk", "Inter", sans-serif; font-weight: 700;
+          font-size: 30pt; line-height: 1; letter-spacing: -0.02em; }
+  .name span { color: var(--accent); }
+  .role { margin-top: 3mm; font-size: 10.5pt; white-space: nowrap; font-weight: 600; }
+  .role em { font-style: normal; color: var(--accent); }
+  .contact { text-align: right; font-size: 8.6pt; line-height: 1.6; color: var(--muted); }
+  .contact b { color: var(--ink); font-weight: 600; }
+  .links { margin-top: 1.5mm; }
+  .links { white-space: nowrap; }
+  .links a { color: var(--accent); font-weight: 600; margin-left: 3mm; }
+
+  /* Profile */
+  .profile { display: grid; grid-template-columns: 1fr; gap: 3mm; padding: 4.5mm 0 1mm; }
+  .profile p { font-size: 10pt; line-height: 1.5; max-width: 165mm; }
+  .looking { display: inline-flex; gap: 2mm; flex-wrap: wrap; align-items: center; }
+  .looking .lbl { font-size: 7.5pt; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-right: 1mm; }
+  .chip { background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 8.4pt;
+          padding: .8mm 2.6mm; border-radius: 99px; }
+
+  /* Sections */
+  section { margin-top: 4.5mm; }
+  h2 { font-family: "Space Grotesk", sans-serif; font-size: 8pt; font-weight: 700; letter-spacing: .16em;
+       text-transform: uppercase; color: var(--accent); padding-bottom: 1.6mm; border-bottom: 1px solid var(--line);
+       margin-bottom: 3mm; }
+  .entry { display: grid; grid-template-columns: 31mm 1fr; gap: 5mm; margin-bottom: 3.4mm; break-inside: avoid; }
+  .when { font-size: 8.3pt; color: var(--muted); line-height: 1.5; padding-top: .4mm; }
+  .when b { display: block; color: var(--ink); font-weight: 600; }
+  .title { font-weight: 700; font-size: 10.2pt; }
+  .title .org { font-weight: 500; color: var(--muted); }
+  .sub { font-size: 8.6pt; color: var(--muted); margin: .4mm 0 1.4mm; }
+  ul { list-style: none; }
+  li { position: relative; padding-left: 3.6mm; margin-bottom: .7mm; }
+  li::before { content: ""; position: absolute; left: 0; top: 2.1mm; width: 1.4mm; height: 1.4mm;
+               background: var(--accent); border-radius: 50%; }
+  .hl { font-weight: 600; }
+
+  /* Skills grid */
+  .skills { display: grid; grid-template-columns: 31mm 1fr; row-gap: 2.2mm; column-gap: 5mm; }
+  .skills dt { font-size: 8.3pt; font-weight: 600; }
+  .skills dd { font-size: 9pt; }
+
+  .entry.flow { break-inside: auto; }
+  li { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  @media screen { body { width: 178mm; margin: 14mm auto; } }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <header>
+    <div>
+      <div class="name">Misuk <span>(Suki)</span> Seo</div>
+      <div class="role">Game Designer &amp; Creative Director · <em>Native Korean Speaker</em></div>
+    </div>
+    <div class="contact">
+      <b>Berlin, Germany</b><br>
+      +49 151 29687024<br>
+      sms940574@gmail.com<br>
+      South Korean citizen · Working Holiday Visa<br>(full work permission)
+      <div class="links">
+        <a href="https://sms940574.github.io/portfolio/">Portfolio ↗</a>
+        <a href="https://rrrxfff.nbing.net">Playable game ↗</a>
+        <a href="https://github.com/sms940574">GitHub ↗</a>
+        <a href="https://www.instagram.com/b02_apt">@b02_apt ↗</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="profile">
+    <p>Game designer and creative director from South Korea, now in Berlin. I led a game collaboration with Seoul select shop FFF from concept to a two-week in-store exhibition, tested every build myself and wrote all of its Korean player text. I prototype my own designs in Unity with AI tools. Before games, I spent 4.5 years directing an online fashion brand and grew its Instagram 4x to 80,000+ followers.</p>
+    <div class="looking">
+      <span class="lbl">Looking for</span>
+      <span class="chip">Korean Localization QA (LQA)</span>
+      <span class="chip">Korean Player Support / Community</span>
+      <span class="chip">Junior Game Design</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Game Projects</h2>
+
+    <div class="entry">
+      <div class="when"><b>Jun – Sep 2026</b>Itaewon, Seoul<br>Team of 4<br>10-week build +<br>exhibition 5–19 Sep</div>
+      <div>
+        <div class="title">Lead Game Designer &amp; Director <span class="org">— RRR × FFF</span></div>
+        <div class="sub">Retail game collaboration with select shop FFF</div>
+        <ul>
+          <li>Led concept, game design and creative direction: a web-based 3D mobile racing game set inside the FFF store, plus two in-store interactions (face-tracking character mirroring and a bubble-pop installation).</li>
+          <li>Managed the partnership with FFF, set the schedule and coordinated the 4-person team.</li>
+          <li>Designed the level by turning the real store layout into a race track; modeled the store room and furniture in Blender and Nomad Sculpt.</li>
+          <li>Designed all four characters; modeled the lead character BuBu and every outfit.</li>
+          <li>Directed the art and tone, and created posters, storefront display videos and the Instagram campaign.</li>
+          <li>Implemented gameplay features in Unity/C# with AI-assisted coding (Claude), alongside the lead programmer.</li>
+          <li><span class="hl">Ran QA throughout development:</span> played every build, found and fixed bugs, and organized playtests with outside players to catch issues I had missed.</li>
+          <li><span class="hl">Wrote all player-facing guide and instruction text in Korean.</span></li>
+          <li><span class="hl">Exhibited the game and interactions in the FFF store, 5–19 September 2026.</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="when"><b>Feb – May 2026</b>PC · Unity<br>Team of 5</div>
+      <div>
+        <div class="title">Team Lead &amp; Game Director <span class="org">— Don't Wake Up</span></div>
+        <div class="sub">Third-person mystery adventure (puzzle &amp; escape) · <a href="https://youtu.be/WfSu1Bc7RAM" style="color:var(--accent);font-weight:600">Gameplay video ↗</a></div>
+        <ul>
+          <li>Led a 5-person team as team lead, covering game design, art and programming.</li>
+          <li>Wrote the concept and story: a dream space just before waking, where the player faces the choice between escaping reality and a new start.</li>
+          <li>Designed the level flow (Opening, Main Hall hub, Room 01, Room 02, Final Room), with the world growing more distorted the further it is from reality.</li>
+          <li>Designed the item and puzzle systems: wings (double jump), boots (dash), glasses (reveal hidden objects) and a sword (break obstacles), combined across three puzzles.</li>
+          <li>Designed and built <i>Falling Dream</i> on my own, a falling mini-game with a Wake Gauge that unlocks the sword: wrote the full design document and made the playable prototype in Unity.</li>
+          <li><span class="hl">FFF liked the game so much that it was also displayed for visitors to play during the RRR × FFF exhibition.</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Work Experience</h2>
+    <div class="entry">
+      <div class="when"><b>Jul 2021 – Dec 2025</b>Korea · 4.5 years</div>
+      <div>
+        <div class="title">Brand Director <span class="org">— hippiedippy</span></div>
+        <div class="sub">Online select shop</div>
+        <ul>
+          <li>Ran the brand end to end, from each season's concept and mood to delivery.</li>
+          <li>Selected and bought the product range; styled every look.</li>
+          <li>Modeled in all lookbook and product shoots.</li>
+          <li>Designed posters and produced brand videos (Procreate, CapCut).</li>
+          <li><span class="hl">Grew Instagram from about 20,000 to 80,000+ followers (4x)</span> through content and social media strategy.</li>
+          <li>Wrote all Korean copy: product descriptions and Instagram posts.</li>
+          <li>Handled customer inquiries and orders through Cafe24 (e-commerce platform); packed and shipped orders.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when"><b>Feb 2019 – Mar 2021</b>Seoul</div>
+      <div>
+        <div class="title">Sales Associate <span class="org">— SNKRS Hongdae</span></div>
+        <ul><li>Sales, customer service and store management in a busy sneaker store.</li></ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when"><b>May – Dec 2018</b>Korea</div>
+      <div>
+        <div class="title">Sales Associate <span class="org">— Polo Ralph Lauren</span></div>
+        <ul><li>Sales and customer service for a premium fashion brand.</li></ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Education &amp; Training</h2>
+    <div class="entry">
+      <div class="when"><b>Dec 2025 – Aug 2026</b>Korea</div>
+      <div>
+        <div class="title">Game Development Program (Unity &amp; C#) <span class="org">— Advanced K-Game Academy, MBC Academy</span></div>
+        <ul>
+          <li>8-month, full-time, government-funded program.</li>
+          <li>Built 15+ Unity prototypes: 2D/3D action, FPS, ML-Agents (AI training), URP Shader Graph, and a login server (MariaDB/PHP).</li>
+        </ul>
+      </div>
+    </div>
+    <div class="entry">
+      <div class="when"><b>2016 – 2021</b>Korea</div>
+      <div>
+        <div class="title">B.A. Fashion Industry <span class="org">— Incheon National University</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills &amp; Languages</h2>
+    <dl class="skills">
+      <dt>Game design</dt><dd>Design documents, core loops, systems and progression, gameplay flow, playtesting</dd>
+      <dt>QA &amp; Korean text</dt><dd>Bug finding and testing, organizing playtests, writing and proofreading Korean UI and guide text</dd>
+      <dt>Tools</dt><dd>Unity, C# (basic), AI-assisted prototyping (Claude), Git/GitHub, Blender (basic), Nomad Sculpt</dd>
+      <dt>Visual &amp; content</dt><dd>Procreate, CapCut, photography and video, social media content</dd>
+      <dt>Languages</dt><dd><span class="hl">Korean</span> — native · <span class="hl">English</span> — A2, actively improving · <span class="hl">Japanese</span> — basic</dd>
+    </dl>
+  </section>
+</div>
+
+</body>
+</html>
