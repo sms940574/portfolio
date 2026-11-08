@@ -96,92 +96,97 @@
     .two,.games,.games.two-up{grid-template-columns:1fr}
     .report dl{grid-template-columns:1fr}
   }
+  .ko{display:none}
+  html.show-ko .ko{display:block;font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;font-size:12.5px;font-weight:400;font-style:normal;letter-spacing:0;text-transform:none;line-height:1.45;color:#d03a7a;margin-top:4px;opacity:1}
+  html.show-ko .quote .ko,html.show-ko footer .ko{color:#ff9cc6}
+  html.show-ko .btn .ko,html.show-ko .pill .ko{display:inline;margin:0 0 0 6px}
+  html.show-ko .hero h1 .ko{font-size:16px}
 </style>
 </head>
 <body>
 
 <nav><div class="wrap">
-  <a class="logo" href="#top">Suki Seo <span>for Stratosphere Games</span></a>
+  <a class="logo" href="#top">Suki Seo <span>for Stratosphere Games<span class="ko">Stratosphere Games 지원용 서수키</span></span></a>
   <a class="btn" href="https://sms940574.github.io/portfolio/stratosphere/Misuk_Seo_CV_QA.pdf" target="_blank">CV ↓</a>
 </div></nav>
 
 <header class="hero" id="top"><div class="wrap">
-  <div class="eyebrow">Application · QA Tester · Stratosphere Games</div>
-  <h1>I own quality, <em>not just bug lists.</em></h1>
-  <p class="lead">Hi Stratosphere team — I'm Suki, a game designer in Berlin. In my last two Unity games I tested every build, ran playtests with outside players, and turned their feedback into fixes. One of them ran for two weeks in a real store, played by real visitors.</p>
+  <div class="eyebrow">Application · QA Tester · Stratosphere Games<span class="ko">지원 · QA 테스터 · Stratosphere Games</span></div>
+  <h1>I own quality, <em>not just bug lists.<span class="ko">버그 목록만이 아니라, 품질을 책임집니다.</span></em></h1>
+  <p class="lead">Hi Stratosphere team — I'm Suki, a game designer in Berlin. In my last two Unity games I tested every build, ran playtests with outside players, and turned their feedback into fixes. One of them ran for two weeks in a real store, played by real visitors.<span class="ko">안녕하세요 Stratosphere 팀 — 저는 베를린에 있는 게임 기획자 수키입니다. 최근 만든 유니티 게임 두 개에서 모든 빌드를 직접 테스트하고, 외부 플레이어와 플레이테스트를 진행하고, 그 피드백을 수정으로 이어갔습니다. 그중 하나는 실제 매장에서 2주 동안 실제 방문객들이 플레이했습니다.</span></p>
   <div class="cta">
-    <a class="btn" href="https://sms940574.github.io/portfolio/stratosphere/Misuk_Seo_CV_QA.pdf" target="_blank">Download CV</a>
-    <a class="btn mint" href="https://rrrxfff.nbing.net" target="_blank">▶ Play my game</a>
-    <a class="btn ghost" href="https://sms940574.github.io/portfolio/" target="_blank">Full portfolio →</a>
+    <a class="btn" href="https://sms940574.github.io/portfolio/stratosphere/Misuk_Seo_CV_QA.pdf" target="_blank">Download CV<span class="ko">CV 다운로드</span></a>
+    <a class="btn mint" href="https://rrrxfff.nbing.net" target="_blank">▶ Play my game<span class="ko">▶ 내 게임 해보기</span></a>
+    <a class="btn ghost" href="https://sms940574.github.io/portfolio/" target="_blank">Full portfolio →<span class="ko">전체 포트폴리오</span></a>
   </div>
   <div class="stats">
-    <div class="stat"><b>2</b><span>Unity games tested end to end</span></div>
-    <div class="stat"><b>Every</b><span>build played before release</span></div>
-    <div class="stat"><b>2 weeks</b><span>live in a real store</span></div>
-    <div class="stat"><b>4.5 yrs</b><span>talking with customers every day</span></div>
+    <div class="stat"><b>2</b><span>Unity games tested end to end<span class="ko">처음부터 끝까지 테스트한 유니티 게임</span></span></div>
+    <div class="stat"><b>Every</b><span>build played before release<span class="ko">공개 전 모든 빌드 직접 플레이</span></span></div>
+    <div class="stat"><b>2 weeks</b><span>live in a real store<span class="ko">실제 매장 전시 기간</span></span></div>
+    <div class="stat"><b>4.5 yrs</b><span>talking with customers every day<span class="ko">매일 고객 응대한 기간</span></span></div>
   </div>
 </div></header>
 
 <section><div class="wrap">
-  <div class="head"><div class="num">01 — How I test</div><div><h2>From first build to real players.</h2><p>Your posting asks for someone who owns quality and works with the community. This is how I worked on my own games.</p></div></div>
+  <div class="head"><div class="num">01 — How I test<span class="ko">01 — 테스트 방식</span></div><div><h2>From first build to real players.<span class="ko">첫 빌드부터 실제 플레이어까지.</span></h2><p>Your posting asks for someone who owns quality and works with the community. This is how I worked on my own games.<span class="ko">공고에서 품질을 책임지고 커뮤니티와 함께 일할 사람을 찾으셨죠. 제가 직접 만든 게임에서 이렇게 일했습니다.</span></p></div></div>
   <div class="steps indent">
-    <div class="box"><span class="k">Play</span><h4>Every build</h4><p>I play each new build myself and check that nothing broke since the last one.</p></div>
-    <div class="box"><span class="k">Check</span><h4>UI and text too</h4><p>Overlapping HUD, blurry text, wrong sizes — I treat them as bugs, not details.</p></div>
-    <div class="box"><span class="k">Playtest</span><h4>Outside players</h4><p>I ask friends who have never seen the game to play it, so they find what I had missed.</p></div>
-    <div class="box"><span class="k">Fix</span><h4>Feedback into fixes</h4><p>I share what I find with the team and fix many issues myself in Unity.</p></div>
+    <div class="box"><span class="k">Play<span class="ko">플레이</span></span><h4>Every build<span class="ko">모든 빌드</span></h4><p>I play each new build myself and check that nothing broke since the last one.<span class="ko">새 빌드가 나올 때마다 직접 플레이하고, 이전 버전 이후로 망가진 게 없는지 확인합니다.</span></p></div>
+    <div class="box"><span class="k">Check<span class="ko">체크</span></span><h4>UI and text too<span class="ko">UI와 텍스트까지</span></h4><p>Overlapping HUD, blurry text, wrong sizes — I treat them as bugs, not details.<span class="ko">HUD 겹침, 흐릿한 글자, 잘못된 크기 — 사소한 게 아니라 버그로 다룹니다.</span></p></div>
+    <div class="box"><span class="k">Playtest<span class="ko">플레이테스트</span></span><h4>Outside players<span class="ko">외부 플레이어</span></h4><p>I ask friends who have never seen the game to play it, so they find what I had missed.<span class="ko">게임을 처음 보는 친구들에게 플레이를 부탁해서, 제가 놓친 걸 찾게 합니다.</span></p></div>
+    <div class="box"><span class="k">Fix<span class="ko">수정</span></span><h4>Feedback into fixes<span class="ko">피드백을 수정으로</span></h4><p>I share what I find with the team and fix many issues myself in Unity.<span class="ko">발견한 걸 팀과 공유하고, 많은 문제는 유니티에서 직접 고칩니다.</span></p></div>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="head"><div class="num">02 — Bug reports</div><div><h2>Bugs I found and fixed.</h2><p>Real entries from my commit history, written up the way I would file them for a QA team.</p></div></div>
+  <div class="head"><div class="num">02 — Bug reports<span class="ko">02 — 버그 리포트</span></div><div><h2>Bugs I found and fixed.<span class="ko">제가 찾고 고친 버그들.</span></h2><p>Real entries from my commit history, written up the way I would file them for a QA team.<span class="ko">제 커밋 기록에 있는 실제 내용을, QA 팀에 제출하는 형식으로 정리했습니다.</span></p></div></div>
   <div class="two indent">
     <div class="box report">
-      <span class="k">Example report</span>
-      <h4>Character passes through the sofa obstacle</h4>
+      <span class="k">Example report<span class="ko">리포트 예시</span></span>
+      <h4>Character passes through the sofa obstacle<span class="ko">캐릭터가 소파 장애물을 통과함</span></h4>
       <dl>
-        <dt>Game / area</dt><dd><i>Falling Dream</i> · falling stage</dd>
-        <dt>Steps</dt><dd>1. Enter the dream from the bed.<br>2. Fall into a sofa obstacle.</dd>
-        <dt>Expected</dt><dd>The player hits the sofa and has to dodge it.</dd>
-        <dt>Actual</dt><dd>The player falls straight through it. The obstacle has no effect.</dd>
-        <dt>Cause / fix</dt><dd>The character was on a collision layer that ignored obstacles. Removed it from that layer.</dd>
-        <dt>Severity</dt><dd>High — breaks the core challenge</dd>
-        <dt>Status</dt><dd>Fixed · Aug 2026</dd>
+        <dt>Game / area<span class="ko">게임 / 위치</span></dt><dd><i>Falling Dream</i> · falling stage<span class="ko">폴링 드림 · 떨어지는 스테이지</span></dd>
+        <dt>Steps<span class="ko">재현 단계</span></dt><dd>1. Enter the dream from the bed.<br>2. Fall into a sofa obstacle.<span class="ko">1. 침대에서 꿈으로 들어간다. 2. 소파 장애물 쪽으로 떨어진다.</span></dd>
+        <dt>Expected<span class="ko">예상 결과</span></dt><dd>The player hits the sofa and has to dodge it.<span class="ko">플레이어가 소파에 부딪혀서 피해야 한다.</span></dd>
+        <dt>Actual<span class="ko">실제 결과</span></dt><dd>The player falls straight through it. The obstacle has no effect.<span class="ko">플레이어가 그대로 통과해서 떨어진다. 장애물이 아무 역할을 못 한다.</span></dd>
+        <dt>Cause / fix<span class="ko">원인 / 수정</span></dt><dd>The character was on a collision layer that ignored obstacles. Removed it from that layer.<span class="ko">캐릭터가 장애물을 무시하는 충돌 레이어에 있었음. 그 레이어에서 뺌.</span></dd>
+        <dt>Severity<span class="ko">심각도</span></dt><dd>High — breaks the core challenge<span class="ko">높음 — 핵심 도전 요소가 망가짐</span></dd>
+        <dt>Status<span class="ko">상태</span></dt><dd>Fixed · Aug 2026<span class="ko">수정 완료 · 2026년 8월</span></dd>
       </dl>
     </div>
     <div>
       <table class="tbl">
-        <thead><tr><th>Game</th><th>Issue</th><th>Type</th></tr></thead>
+        <thead><tr><th>Game<span class="ko">게임</span></th><th>Issue<span class="ko">문제</span></th><th>Type<span class="ko">종류</span></th></tr></thead>
         <tbody>
-          <tr><td>RRR × FFF</td><td>Character name images on the race ranking board had different sizes</td><td><span class="badge">UI</span></td></tr>
-          <tr><td>RRR × FFF</td><td>"Ready" text in the lobby was blurry and too small</td><td><span class="badge">Text</span></td></tr>
-          <tr><td>RRR × FFF</td><td>An empty hint box appeared in Adventure mode on PC</td><td><span class="badge">UI</span></td></tr>
-          <tr><td>RRR × FFF</td><td>Mode-select screen overlapped the screen behind it after login</td><td><span class="badge">UI</span></td></tr>
-          <tr><td>RRR × FFF</td><td>Rank HUD overlapped other HUD elements</td><td><span class="badge">UI</span></td></tr>
-          <tr><td>Don't Wake Up</td><td>Inventory would not open</td><td><span class="badge">Function</span></td></tr>
-          <tr><td>Don't Wake Up</td><td>Butterfly outline left a ghost image in Room 2</td><td><span class="badge">Visual</span></td></tr>
+          <tr><td>RRR × FFF</td><td>Character name images on the race ranking board had different sizes<span class="ko">레이스 랭킹 보드의 캐릭터 이름 이미지 크기가 제각각</span></td><td><span class="badge">UI</span></td></tr>
+          <tr><td>RRR × FFF</td><td>"Ready" text in the lobby was blurry and too small<span class="ko">로비의 "Ready" 글자가 흐리고 너무 작음</span></td><td><span class="badge">Text</span></td></tr>
+          <tr><td>RRR × FFF</td><td>An empty hint box appeared in Adventure mode on PC<span class="ko">PC 어드벤처 모드에서 빈 힌트 박스가 뜸</span></td><td><span class="badge">UI</span></td></tr>
+          <tr><td>RRR × FFF</td><td>Mode-select screen overlapped the screen behind it after login<span class="ko">로그인 후 모드 선택 화면이 뒤 화면과 겹침</span></td><td><span class="badge">UI</span></td></tr>
+          <tr><td>RRR × FFF</td><td>Rank HUD overlapped other HUD elements<span class="ko">순위 HUD가 다른 HUD와 겹침</span></td><td><span class="badge">UI</span></td></tr>
+          <tr><td>Don't Wake Up</td><td>Inventory would not open<span class="ko">인벤토리가 안 열림</span></td><td><span class="badge">Function<span class="ko">기능</span></span></td></tr>
+          <tr><td>Don't Wake Up</td><td>Butterfly outline left a ghost image in Room 2<span class="ko">Room 2에서 나비 외곽선 잔상이 남음</span></td><td><span class="badge">Visual<span class="ko">비주얼</span></span></td></tr>
         </tbody>
       </table>
-      <p class="note">All fixed by me, 2026.</p>
+      <p class="note">All fixed by me, 2026.<span class="ko">전부 제가 직접 수정, 2026년.</span></p>
     </div>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="head"><div class="num">03 — Games I tested</div><div><h2>Two games, tested end to end.</h2></div></div>
+  <div class="head"><div class="num">03 — Games I tested<span class="ko">03 — 테스트한 게임</span></div><div><h2>Two games, tested end to end.<span class="ko">처음부터 끝까지 테스트한 게임 두 개.</span></h2></div></div>
   <div class="games two-up indent">
     <article class="game">
       <div class="tagline">Game 1</div>
       <div class="media"><video autoplay muted loop playsinline preload="metadata" src="https://sms940574.github.io/portfolio/video/adventure-only.mp4"></video></div>
       <div class="body">
         <h3>FFF × RRR</h3>
-        <div class="meta">Web-based 3D mobile racing game · Unity · team of 4 · Lead game designer &amp; director · Jun–Sep 2026</div>
+        <div class="meta">Web-based 3D mobile racing game · Unity · team of 4 · Lead game designer &amp; director · Jun–Sep 2026<span class="ko">웹 기반 3D 모바일 레이싱 게임 · 유니티 · 4인 팀 · 메인 기획 & 디렉터 · 2026년 6–9월</span></div>
         <ul>
-          <li>Exhibited in the FFF store in Seoul, 5–19 Sep 2026 — real visitors played it every day, so it had to just work</li>
-          <li>Tested the lobby, ranking board, HUD and Adventure mode on every build</li>
-          <li>Found and fixed UI and text bugs: overlapping HUD, blurry "Ready" text, wrong image sizes</li>
-          <li>Ran playtests with friends who had never seen the game</li>
+          <li>Exhibited in the FFF store in Seoul, 5–19 Sep 2026 — real visitors played it every day, so it had to just work<span class="ko">2026년 9월 5–19일 서울 FFF 매장 전시 — 실제 방문객이 매일 플레이해서, 무조건 잘 돌아가야 했음</span></li>
+          <li>Tested the lobby, ranking board, HUD and Adventure mode on every build<span class="ko">빌드마다 로비, 랭킹 보드, HUD, 어드벤처 모드를 테스트</span></li>
+          <li>Found and fixed UI and text bugs: overlapping HUD, blurry "Ready" text, wrong image sizes<span class="ko">UI·텍스트 버그를 찾고 수정: HUD 겹침, 흐릿한 "Ready" 글자, 잘못된 이미지 크기</span></li>
+          <li>Ran playtests with friends who had never seen the game<span class="ko">게임을 처음 보는 친구들과 플레이테스트 진행</span></li>
         </ul>
-        <div class="links"><a class="pill solid" href="https://rrrxfff.nbing.net" target="_blank">▶ Play in browser ↗</a><a class="pill" href="https://sms940574.github.io/portfolio/#rrr" target="_blank">Case study →</a></div>
+        <div class="links"><a class="pill solid" href="https://rrrxfff.nbing.net" target="_blank">▶ Play in browser ↗<span class="ko">▶ 브라우저에서 플레이</span></a><a class="pill" href="https://sms940574.github.io/portfolio/#rrr" target="_blank">Case study →<span class="ko">케이스 스터디</span></a></div>
       </div>
     </article>
     <article class="game">
@@ -189,37 +194,38 @@
       <div class="media"><video autoplay muted loop playsinline preload="metadata" src="https://sms940574.github.io/portfolio/video/dwu-play4.mp4"></video></div>
       <div class="body">
         <h3>Don't Wake Up</h3>
-        <div class="meta">3rd-person mystery adventure · PC · Unity · team of 5 · Team lead &amp; game director · Feb–May 2026</div>
+        <div class="meta">3rd-person mystery adventure · PC · Unity · team of 5 · Team lead &amp; game director · Feb–May 2026<span class="ko">3인칭 미스터리 어드벤처 · PC · 유니티 · 5인 팀 · 팀장 & 게임 디렉터 · 2026년 2–5월</span></div>
         <ul>
-          <li>Puzzles that combine four items (wings, boots, glasses, sword) — many states to test</li>
-          <li>Includes <b>Falling Dream</b>, a mini-game I designed, built and tested on my own — that's where I found the sofa collision bug above</li>
-          <li>Fixed the inventory not opening and a ghost image in Room 2</li>
-          <li>Playtesters said the guidance was too thin — the first thing I'd improve</li>
+          <li>Puzzles that combine four items (wings, boots, glasses, sword) — many states to test<span class="ko">아이템 4개(날개, 부츠, 안경, 검)를 조합하는 퍼즐 — 테스트할 경우의 수가 많음</span></li>
+          <li>Includes <b>Falling Dream</b>, a mini-game I designed, built and tested on my own — that's where I found the sofa collision bug above<span class="ko">제가 혼자 기획·제작·테스트한 미니게임 폴링 드림 포함 — 위의 소파 충돌 버그를 찾은 곳</span></li>
+          <li>Fixed the inventory not opening and a ghost image in Room 2<span class="ko">인벤토리 안 열리는 문제와 Room 2 잔상 문제를 수정</span></li>
+          <li>Playtesters said the guidance was too thin — the first thing I'd improve<span class="ko">플레이테스터들이 안내가 너무 부족하다고 함 — 제가 가장 먼저 개선할 부분</span></li>
         </ul>
-        <div class="links"><a class="pill solid" href="https://drive.google.com/file/d/1FCoiiER30pUK2uGi51jauwIBVKQM8LG2/view" target="_blank">⬇ Windows build (800MB) ↗</a><a class="pill" href="https://youtu.be/WfSu1Bc7RAM" target="_blank">Gameplay video ↗</a><a class="pill" href="https://sms940574.github.io/portfolio/#dwu" target="_blank">Case study →</a><a class="pill" href="https://sms940574.github.io/portfolio/#fd" target="_blank">Falling Dream →</a></div>
+        <div class="links"><a class="pill solid" href="https://drive.google.com/file/d/1FCoiiER30pUK2uGi51jauwIBVKQM8LG2/view" target="_blank">⬇ Windows build (800MB) ↗<span class="ko">윈도우 빌드 다운로드</span></a><a class="pill" href="https://youtu.be/WfSu1Bc7RAM" target="_blank">Gameplay video ↗<span class="ko">플레이 영상</span></a><a class="pill" href="https://sms940574.github.io/portfolio/#dwu" target="_blank">Case study →<span class="ko">케이스 스터디</span></a><a class="pill" href="https://sms940574.github.io/portfolio/#fd" target="_blank">Falling Dream →<span class="ko">폴링 드림</span></a></div>
       </div>
     </article>
   </div>
 </div></section>
 
 <section><div class="wrap">
-  <div class="head"><div class="num">04 — The player side</div><div><h2>I listen to players.</h2><p>Your QA Tester also works with the community manager on player feedback. I've been on that side for years.</p></div></div>
+  <div class="head"><div class="num">04 — The player side<span class="ko">04 — 플레이어 쪽 경험</span></div><div><h2>I listen to players.<span class="ko">저는 플레이어 말을 듣습니다.</span></h2><p>Your QA Tester also works with the community manager on player feedback. I've been on that side for years.<span class="ko">QA 테스터는 커뮤니티 매니저와 함께 플레이어 피드백도 다룬다고 하셨죠. 저는 몇 년 동안 그쪽 일을 해왔습니다.</span></p></div></div>
   <div class="indent">
-    <div class="quote">4.5 years of answering customers every day at a fashion brand, and an Instagram community I grew from about 20,000 to 80,000+. I know how to read feedback and find the real problem behind it.<small>Also: native Korean speaker — useful for Korean players and Korean localization checks.</small></div>
+    <div class="quote">4.5 years of answering customers every day at a fashion brand, and an Instagram community I grew from about 20,000 to 80,000+. I know how to read feedback and find the real problem behind it.<span class="ko">패션 브랜드에서 4년 반 동안 매일 고객 응대를 했고, 인스타그램 커뮤니티를 약 2만에서 8만+로 키웠습니다. 피드백을 읽고 그 뒤에 있는 진짜 문제를 찾을 줄 압니다.</span><small>Also: native Korean speaker — useful for Korean players and Korean localization checks.<span class="ko">그리고: 한국어 원어민 — 한국 플레이어와 한국어 현지화 검수에 도움이 됩니다.</span></small></div>
   </div>
 </div></section>
 
 <footer><div class="wrap">
-  <h2>Thanks for looking — I'd love to test your games.</h2>
+  <h2>Thanks for looking — I'd love to test your games.<span class="ko">봐주셔서 감사합니다 — 여러분의 게임을 꼭 테스트해보고 싶어요.</span></h2>
   <div class="cta">
     <a class="btn" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a>
-    <a class="btn ghost" href="https://sms940574.github.io/portfolio/stratosphere/Misuk_Seo_CV_QA.pdf" target="_blank">CV (PDF)</a>
-    <a class="btn ghost" href="https://sms940574.github.io/portfolio/" target="_blank">Full game portfolio</a>
+    <a class="btn ghost" href="https://sms940574.github.io/portfolio/stratosphere/Misuk_Seo_CV_QA.pdf" target="_blank">CV (PDF)<span class="ko">CV (PDF)</span></a>
+    <a class="btn ghost" href="https://sms940574.github.io/portfolio/" target="_blank">Full game portfolio<span class="ko">전체 게임 포트폴리오</span></a>
   </div>
-  <small>Misuk (Suki) Seo · Berlin · Working Holiday Visa (full work permission)</small>
+  <small>Misuk (Suki) Seo · Berlin · Working Holiday Visa (full work permission)<span class="ko">서미숙(수키) · 베를린 · 워킹홀리데이 비자 (취업 제한 없음)</span></small>
 </div></footer>
 
 <script>
+  if(new URLSearchParams(location.search).has("ko"))document.documentElement.classList.add("show-ko");
   const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.25});
   document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');vo.observe(v)});
 </script>
