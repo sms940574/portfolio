@@ -73,6 +73,9 @@
   .game ul{list-style:none;font-size:15px;color:#33343a;display:grid;gap:4px}
   .game li{padding-left:16px;position:relative}
   .game li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--mint)}
+  .games.two-up{grid-template-columns:1fr 1fr}
+  .game .tagline{font-family:"Space Grotesk";font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:12px 18px;background:var(--mint-soft);color:#1f6f63}
+  .pill.solid{background:var(--ink);color:#fff}
   .game .links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
   .pill{font-size:13px;font-weight:500;padding:7px 12px;border-radius:99px;border:1px solid var(--ink);text-decoration:none}
   .pill:hover{background:var(--ink);color:#fff}
@@ -90,7 +93,7 @@
     .stats,.steps{grid-template-columns:1fr 1fr}
     .head{grid-template-columns:1fr;gap:6px}
     .indent{margin-left:0}
-    .two,.games{grid-template-columns:1fr}
+    .two,.games,.games.two-up{grid-template-columns:1fr}
     .report dl{grid-template-columns:1fr}
   }
 </style>
@@ -112,7 +115,7 @@
     <a class="btn ghost" href="https://sms940574.github.io/portfolio/" target="_blank">Full portfolio →</a>
   </div>
   <div class="stats">
-    <div class="stat"><b>3</b><span>games tested end to end</span></div>
+    <div class="stat"><b>2</b><span>Unity games tested end to end</span></div>
     <div class="stat"><b>Every</b><span>build played before release</span></div>
     <div class="stat"><b>2 weeks</b><span>live in a real store</span></div>
     <div class="stat"><b>4.5 yrs</b><span>talking with customers every day</span></div>
@@ -164,44 +167,36 @@
 </div></section>
 
 <section><div class="wrap">
-  <div class="head"><div class="num">03 — Games I tested</div><div><h2>Three games, tested end to end.</h2></div></div>
-  <div class="games indent">
+  <div class="head"><div class="num">03 — Games I tested</div><div><h2>Two games, tested end to end.</h2></div></div>
+  <div class="games two-up indent">
     <article class="game">
+      <div class="tagline">Game 1</div>
       <div class="media"><video autoplay muted loop playsinline preload="metadata" src="https://sms940574.github.io/portfolio/video/adventure-only.mp4"></video></div>
       <div class="body">
-        <h3>RRR × FFF</h3>
-        <div class="meta">Web-based 3D mobile racing game · Unity · team of 4 · Lead designer</div>
+        <h3>FFF × RRR</h3>
+        <div class="meta">Web-based 3D mobile racing game · Unity · team of 4 · Lead game designer &amp; director · Jun–Sep 2026</div>
         <ul>
-          <li>Exhibited in the FFF store in Seoul, 5–19 Sep 2026</li>
-          <li>Real visitors played it every day — it had to just work</li>
-          <li>Tested UI, ranking, lobby and HUD on every build</li>
+          <li>Exhibited in the FFF store in Seoul, 5–19 Sep 2026 — real visitors played it every day, so it had to just work</li>
+          <li>Tested the lobby, ranking board, HUD and Adventure mode on every build</li>
+          <li>Found and fixed UI and text bugs: overlapping HUD, blurry "Ready" text, wrong image sizes</li>
+          <li>Ran playtests with friends who had never seen the game</li>
         </ul>
-        <div class="links"><a class="pill" href="https://rrrxfff.nbing.net" target="_blank">Play ↗</a><a class="pill" href="https://sms940574.github.io/portfolio/#rrr" target="_blank">Case study →</a></div>
+        <div class="links"><a class="pill solid" href="https://rrrxfff.nbing.net" target="_blank">▶ Play in browser ↗</a><a class="pill" href="https://sms940574.github.io/portfolio/#rrr" target="_blank">Case study →</a></div>
       </div>
     </article>
     <article class="game">
+      <div class="tagline">Game 2</div>
       <div class="media"><video autoplay muted loop playsinline preload="metadata" src="https://sms940574.github.io/portfolio/video/dwu-play4.mp4"></video></div>
       <div class="body">
         <h3>Don't Wake Up</h3>
-        <div class="meta">3rd-person mystery adventure · PC · Unity · team of 5 · Team lead</div>
+        <div class="meta">3rd-person mystery adventure · PC · Unity · team of 5 · Team lead &amp; game director · Feb–May 2026</div>
         <ul>
-          <li>Puzzles that combine four items — lots of states to test</li>
-          <li>Playtests showed the guidance was too thin; I took that seriously</li>
-          <li>Also shown at the FFF exhibition</li>
+          <li>Puzzles that combine four items (wings, boots, glasses, sword) — many states to test</li>
+          <li>Includes <b>Falling Dream</b>, a mini-game I designed, built and tested on my own — that's where I found the sofa collision bug above</li>
+          <li>Fixed the inventory not opening and a ghost image in Room 2</li>
+          <li>Playtesters said the guidance was too thin — the first thing I'd improve</li>
         </ul>
-        <div class="links"><a class="pill" href="https://youtu.be/WfSu1Bc7RAM" target="_blank">Video ↗</a><a class="pill" href="https://sms940574.github.io/portfolio/#dwu" target="_blank">Case study →</a></div>
-      </div>
-    </article>
-    <article class="game">
-      <div class="media"><video autoplay muted loop playsinline preload="metadata" src="https://sms940574.github.io/portfolio/video/fallingdream2.mp4"></video></div>
-      <div class="body">
-        <h3>Falling Dream</h3>
-        <div class="meta">Falling mini-game inside Don't Wake Up · Unity · solo</div>
-        <ul>
-          <li>Designed, built and tested on my own</li>
-          <li>Found the sofa collision bug above</li>
-                  </ul>
-        <div class="links"><a class="pill" href="https://sms940574.github.io/portfolio/#fd" target="_blank">Case study →</a></div>
+        <div class="links"><a class="pill" href="https://youtu.be/WfSu1Bc7RAM" target="_blank">Gameplay video ↗</a><a class="pill" href="https://sms940574.github.io/portfolio/#dwu" target="_blank">Case study →</a><a class="pill" href="https://sms940574.github.io/portfolio/#fd" target="_blank">Falling Dream →</a></div>
       </div>
     </article>
   </div>
