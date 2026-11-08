@@ -101,6 +101,22 @@
   html.show-ko .quote .ko,html.show-ko footer .ko{color:#ff9cc6}
   html.show-ko .btn .ko,html.show-ko .pill .ko{display:inline;margin:0 0 0 6px}
   html.show-ko .hero h1 .ko{font-size:16px}
+  .more{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .more a{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;text-decoration:none;display:flex;flex-direction:column;transition:transform .15s}
+  .more a:hover{transform:translateY(-3px)}
+  .more .th{aspect-ratio:16/10;background:#111;overflow:hidden}
+  .more .th img{width:100%;height:100%;object-fit:cover}
+  .more .th.type{background:var(--ink);color:#f3f3f0;display:flex;flex-direction:column;justify-content:center;gap:10px;padding:22px;font-family:-apple-system,"Apple SD Gothic Neo",sans-serif;font-size:clamp(16px,1.6vw,21px)}
+  .more .th.type s{color:#ff8a84;text-decoration-thickness:2px}
+  .more .th.type b{color:var(--mint);font-weight:600}
+  .more .th.type small{font-family:Inter;font-size:12px;letter-spacing:.12em;text-transform:uppercase;opacity:.6}
+  .more .tx{padding:16px 18px 18px}
+  .more h4{font-size:19px;margin-bottom:4px}
+  .more p{font-size:14px;color:#3b3c42}
+  .more .go{display:inline-block;margin-top:10px;font-size:13px;font-weight:600}
+  .more .th.quad{display:grid;grid-template-columns:repeat(4,1fr);background:#fff}
+  .more .th.quad img{object-fit:contain}
+  @media (max-width:900px){.more{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -212,6 +228,24 @@
   <div class="head"><div class="num">04 — The player side<span class="ko">04 — 플레이어 쪽 경험</span></div><div><h2>I listen to players.<span class="ko">저는 플레이어 말을 듣습니다.</span></h2><p>Your QA Tester also works with the community manager on player feedback. I've been on that side for years.<span class="ko">QA 테스터는 커뮤니티 매니저와 함께 플레이어 피드백도 다룬다고 하셨죠. 저는 몇 년 동안 그쪽 일을 해왔습니다.</span></p></div></div>
   <div class="indent">
     <div class="quote">4.5 years of answering customers every day at a fashion brand, and an Instagram community I grew from about 20,000 to 80,000+. I know how to read feedback and find the real problem behind it.<span class="ko">패션 브랜드에서 4년 반 동안 매일 고객 응대를 했고, 인스타그램 커뮤니티를 약 2만에서 8만+로 키웠습니다. 피드백을 읽고 그 뒤에 있는 진짜 문제를 찾을 줄 압니다.</span><small>Also: native Korean speaker — useful for Korean players and Korean localization checks.<span class="ko">그리고: 한국어 원어민 — 한국 플레이어와 한국어 현지화 검수에 도움이 됩니다.</span></small></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><div class="num">05 — More<span class="ko">05 — 더 보기</span></div><div><h2>More in my full portfolio.<span class="ko">전체 포트폴리오에 더 있어요.</span></h2><p>Three things you might want to see next.<span class="ko">다음으로 보면 좋을 세 가지.</span></p></div></div>
+  <div class="more indent">
+    <a href="https://sms940574.github.io/portfolio/#lqa" target="_blank">
+      <div class="th type"><small>Korean LQA</small><div>난 아직 준비가 <s>안됐어</s></div><div>난 아직 준비가 <b>안 됐어</b></div></div>
+      <div class="tx"><h4>Korean LQA on my own game<span class="ko">내 게임 한국어 직접 검수</span></h4><p>I proofread the Korean text I shipped: spacing, consistency and terms.<span class="ko">제가 출시한 한국어 텍스트를 직접 교정: 띄어쓰기, 일관성, 용어.</span></p><span class="go">See the LQA pass →<span class="ko">LQA 검수 보기</span></span></div>
+    </a>
+    <a href="https://sms940574.github.io/portfolio/#docs" target="_blank">
+      <div class="th"><img loading="lazy" src="https://sms940574.github.io/portfolio/img/doc-rrr-8.jpg" alt="Planning deck page"></div>
+      <div class="tx"><h4>29-page planning deck<span class="ko">29페이지 기획서</span></h4><p>Concept, player journey, level design and a 10-week roadmap.<span class="ko">컨셉, 플레이어 여정, 레벨 디자인, 10주 로드맵.</span></p><span class="go">See the docs →<span class="ko">기획서 보기</span></span></div>
+    </a>
+    <a href="https://sms940574.github.io/portfolio/#characters" target="_blank">
+      <div class="th quad"><img loading="lazy" src="https://sms940574.github.io/portfolio/img/render-bubu.jpg" alt="bubu"><img loading="lazy" src="https://sms940574.github.io/portfolio/img/render-pipi.jpg" alt="pipi"><img loading="lazy" src="https://sms940574.github.io/portfolio/img/render-popo.jpg" alt="popo"><img loading="lazy" src="https://sms940574.github.io/portfolio/img/render-ringring.jpg" alt="ringring"></div>
+      <div class="tx"><h4>Four characters I designed<span class="ko">제가 디자인한 캐릭터 4명</span></h4><p>From concept sketch to a rigged model in the engine.<span class="ko">컨셉 스케치부터 엔진 속 리깅된 모델까지.</span></p><span class="go">See the characters →<span class="ko">캐릭터 보기</span></span></div>
+    </a>
   </div>
 </div></section>
 
