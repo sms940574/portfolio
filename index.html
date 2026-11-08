@@ -926,6 +926,15 @@
     lb.addEventListener('touchend',e=>{if(sx===null)return; const dx=e.changedTouches[0].clientX-sx; if(Math.abs(dx)>50)step(dx<0?1:-1); sx=null;});
   })();
 </script>
+<script>
+  // keep #hash links landing on their section while lazy images load and shift the layout
+  (function(){
+    const el=location.hash&&document.getElementById(location.hash.slice(1)); if(!el)return;
+    let stop=false; ['wheel','touchstart','keydown','mousedown'].forEach(t=>addEventListener(t,()=>stop=true,{once:true,passive:true}));
+    const go=()=>{if(!stop)el.scrollIntoView({block:'start'})};
+    [0,300,800,1500,2500,4000].forEach(t=>setTimeout(go,t)); addEventListener('load',go);
+  })();
+</script>
 <script src="ko.js"></script>
 </body>
 </html>
