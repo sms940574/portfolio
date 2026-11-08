@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suki Seo — QA Tester for Stratosphere Games</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#f2f2ef; --paper:#fbfbf9; --ink:#141416; --muted:#6b6d72; --line:#dcdcd6;
+    --mint:#5cc7b6; --mint-soft:#dff3ef; --ice:#6f86ad; --ice-soft:#e6ebf3; --red:#e2322b; --red-soft:#fbe3e1;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font-family:Inter,-apple-system,"Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img,video{display:block;max-width:100%}
+  a{color:inherit}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 clamp(16px,3vw,40px)}
+  h1,h2,h3,h4{font-family:"Space Grotesk",Inter,sans-serif;letter-spacing:-.02em;line-height:1.08}
+  .eyebrow{font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+
+  nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  nav .wrap{display:flex;justify-content:space-between;align-items:center;height:60px;gap:12px}
+  .logo{font-family:"Space Grotesk";font-weight:700;font-size:18px;text-decoration:none}
+  .logo span{color:var(--muted);font-weight:400}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:99px;background:var(--ink);color:#fff;text-decoration:none;font-weight:500;font-size:15px;border:1px solid var(--ink);transition:transform .15s}
+  .btn:hover{transform:translateY(-2px)}
+  .btn.ghost{background:transparent;color:var(--ink)}
+  .btn.mint{background:var(--mint);border-color:var(--mint);color:#06302a}
+
+  .hero{padding:64px 0 36px}
+  .hero h1{font-size:clamp(40px,6vw,84px);margin:14px 0 20px;max-width:15ch}
+  .hero h1 em{font-style:normal;color:var(--mint)}
+  .lead{font-size:clamp(17px,1.5vw,20px);max-width:720px;color:#2e2f34}
+  .cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:26px}
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}
+  .stat{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px}
+  .stat b{font-family:"Space Grotesk";font-size:34px;line-height:1;display:block}
+  .stat span{font-size:14px;color:var(--muted)}
+
+  section{padding:56px 0}
+  .head{display:grid;grid-template-columns:160px 1fr;gap:24px;margin-bottom:26px}
+  .num{font-family:"Space Grotesk";font-size:14px;color:var(--muted);padding-top:8px}
+  .head h2{font-size:clamp(28px,3.4vw,44px)}
+  .head p{margin-top:10px;max-width:700px;color:#34353b}
+  .indent{margin-left:184px}
+
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .box{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .box .k{display:block;font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:#1f8f7e;margin-bottom:8px}
+  .box h4{font-size:19px;margin-bottom:6px}
+  .box p{font-size:15px;color:#3b3c42}
+
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+  .report dl{display:grid;grid-template-columns:120px 1fr;gap:8px 14px;margin-top:12px;font-size:15px}
+  .report dt{color:var(--muted);font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;padding-top:2px}
+  .tbl{width:100%;border-collapse:collapse;font-size:15px;background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+  .tbl th{text-align:left;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:12px 16px;border-bottom:1px solid var(--line);background:#f6f6f3}
+  .tbl td{padding:11px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  .tbl tr:last-child td{border-bottom:0}
+  .badge{display:inline-block;font-size:12px;font-weight:600;padding:2px 9px;border-radius:99px;background:var(--ice-soft);color:#3b4f74;white-space:nowrap}
+  .note{font-size:13px;color:var(--muted);margin-top:8px}
+
+  .games{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .game{background:var(--paper);border:1px solid var(--line);border-radius:18px;overflow:hidden;display:flex;flex-direction:column}
+  .game .media{aspect-ratio:16/10;background:#111;overflow:hidden}
+  .game .media video,.game .media img{width:100%;height:100%;object-fit:cover}
+  .game .body{padding:18px;display:flex;flex-direction:column;gap:8px;flex:1}
+  .game h3{font-size:22px}
+  .game .meta{font-size:13px;color:var(--muted)}
+  .game ul{list-style:none;font-size:15px;color:#33343a;display:grid;gap:4px}
+  .game li{padding-left:16px;position:relative}
+  .game li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--mint)}
+  .game .links{margin-top:auto;display:flex;gap:8px;flex-wrap:wrap;padding-top:6px}
+  .pill{font-size:13px;font-weight:500;padding:7px 12px;border-radius:99px;border:1px solid var(--ink);text-decoration:none}
+  .pill:hover{background:var(--ink);color:#fff}
+
+  .quote{background:var(--ink);color:#f3f3f0;border-radius:20px;padding:34px;font-family:"Space Grotesk";font-size:clamp(20px,2.2vw,28px);line-height:1.35}
+  .quote small{display:block;font-family:Inter;font-size:14px;opacity:.7;margin-top:12px}
+
+  footer{background:var(--ink);color:#f3f3f0;padding:70px 0 40px;margin-top:30px}
+  footer h2{font-size:clamp(34px,5vw,64px);max-width:16ch}
+  footer .cta .btn{background:#f3f3f0;color:var(--ink);border-color:#f3f3f0}
+  footer .cta .btn.ghost{background:transparent;color:#f3f3f0}
+  footer small{display:block;margin-top:40px;font-size:13px;opacity:.6}
+
+  @media (max-width:900px){
+    .stats,.steps{grid-template-columns:1fr 1fr}
+    .head{grid-template-columns:1fr;gap:6px}
+    .indent{margin-left:0}
+    .two,.games{grid-template-columns:1fr}
+    .report dl{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top">Suki Seo <span>for Stratosphere Games</span></a>
+  <a class="btn" href="Misuk_Seo_CV_QA.pdf" target="_blank">CV ↓</a>
+</div></nav>
+
+<header class="hero" id="top"><div class="wrap">
+  <div class="eyebrow">Application · QA Tester · Stratosphere Games</div>
+  <h1>I own quality, <em>not just bug lists.</em></h1>
+  <p class="lead">Hi Stratosphere team — I'm Suki, a game designer in Berlin. In my last two Unity games I tested every build, ran playtests with outside players, and turned their feedback into fixes. One of them ran for two weeks in a real store, played by real visitors.</p>
+  <div class="cta">
+    <a class="btn" href="Misuk_Seo_CV_QA.pdf" target="_blank">Download CV</a>
+    <a class="btn mint" href="https://rrrxfff.nbing.net" target="_blank">▶ Play my game</a>
+    <a class="btn ghost" href="../">Full portfolio →</a>
+  </div>
+  <div class="stats">
+    <div class="stat"><b>3</b><span>games tested end to end</span></div>
+    <div class="stat"><b>Every</b><span>build played before release</span></div>
+    <div class="stat"><b>2 weeks</b><span>live in a real store</span></div>
+    <div class="stat"><b>4.5 yrs</b><span>talking with customers every day</span></div>
+  </div>
+</div></header>
+
+<section><div class="wrap">
+  <div class="head"><div class="num">01 — How I test</div><div><h2>From first build to real players.</h2><p>Your posting asks for someone who owns quality and works with the community. This is how I worked on my own games.</p></div></div>
+  <div class="steps indent">
+    <div class="box"><span class="k">Play</span><h4>Every build</h4><p>I play each new build myself and check that nothing broke since the last one.</p></div>
+    <div class="box"><span class="k">Check</span><h4>UI and text too</h4><p>Overlapping HUD, blurry text, wrong sizes — I treat them as bugs, not details.</p></div>
+    <div class="box"><span class="k">Playtest</span><h4>Outside players</h4><p>I ask friends who have never seen the game to play it, so they find what I had missed.</p></div>
+    <div class="box"><span class="k">Fix</span><h4>Feedback into fixes</h4><p>I share what I find with the team and fix many issues myself in Unity.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><div class="num">02 — Bug reports</div><div><h2>Bugs I found and fixed.</h2><p>Real entries from my commit history, written up the way I would file them for a QA team.</p></div></div>
+  <div class="two indent">
+    <div class="box report">
+      <span class="k">Example report</span>
+      <h4>Character passes through the sofa obstacle</h4>
+      <dl>
+        <dt>Game / area</dt><dd><i>Falling Dream</i> · falling stage</dd>
+        <dt>Steps</dt><dd>1. Enter the dream from the bed.<br>2. Fall into a sofa obstacle.</dd>
+        <dt>Expected</dt><dd>The player hits the sofa and has to dodge it.</dd>
+        <dt>Actual</dt><dd>The player falls straight through it. The obstacle has no effect.</dd>
+        <dt>Cause / fix</dt><dd>The character was on a collision layer that ignored obstacles. Removed it from that layer.</dd>
+        <dt>Severity</dt><dd>High — breaks the core challenge</dd>
+        <dt>Status</dt><dd>Fixed · Aug 2026</dd>
+      </dl>
+    </div>
+    <div>
+      <table class="tbl">
+        <thead><tr><th>Game</th><th>Issue</th><th>Type</th></tr></thead>
+        <tbody>
+          <tr><td>RRR × FFF</td><td>Character name images on the race ranking board had different sizes</td><td><span class="badge">UI</span></td></tr>
+          <tr><td>RRR × FFF</td><td>"Ready" text in the lobby was blurry and too small</td><td><span class="badge">Text</span></td></tr>
+          <tr><td>RRR × FFF</td><td>An empty hint box appeared in Adventure mode on PC</td><td><span class="badge">UI</span></td></tr>
+          <tr><td>RRR × FFF</td><td>Mode-select screen overlapped the screen behind it after login</td><td><span class="badge">UI</span></td></tr>
+          <tr><td>RRR × FFF</td><td>Rank HUD overlapped other HUD elements</td><td><span class="badge">UI</span></td></tr>
+          <tr><td>Don't Wake Up</td><td>Inventory would not open</td><td><span class="badge">Function</span></td></tr>
+          <tr><td>Don't Wake Up</td><td>Butterfly outline left a ghost image in Room 2</td><td><span class="badge">Visual</span></td></tr>
+        </tbody>
+      </table>
+      <p class="note">All fixed by me, 2026.</p>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><div class="num">03 — Games I tested</div><div><h2>Three games, tested end to end.</h2></div></div>
+  <div class="games indent">
+    <article class="game">
+      <div class="media"><video autoplay muted loop playsinline preload="metadata" src="../video/adventure-only.mp4"></video></div>
+      <div class="body">
+        <h3>RRR × FFF</h3>
+        <div class="meta">Web-based 3D mobile racing game · Unity · team of 4 · Lead designer</div>
+        <ul>
+          <li>Exhibited in the FFF store in Seoul, 5–19 Sep 2026</li>
+          <li>Real visitors played it every day — it had to just work</li>
+          <li>Tested UI, ranking, lobby and HUD on every build</li>
+        </ul>
+        <div class="links"><a class="pill" href="https://rrrxfff.nbing.net" target="_blank">Play ↗</a><a class="pill" href="../#rrr">Case study →</a></div>
+      </div>
+    </article>
+    <article class="game">
+      <div class="media"><video autoplay muted loop playsinline preload="metadata" src="../video/dwu-play4.mp4"></video></div>
+      <div class="body">
+        <h3>Don't Wake Up</h3>
+        <div class="meta">3rd-person mystery adventure · PC · Unity · team of 5 · Team lead</div>
+        <ul>
+          <li>Puzzles that combine four items — lots of states to test</li>
+          <li>Playtests showed the guidance was too thin; I took that seriously</li>
+          <li>Also shown at the FFF exhibition</li>
+        </ul>
+        <div class="links"><a class="pill" href="https://youtu.be/WfSu1Bc7RAM" target="_blank">Video ↗</a><a class="pill" href="../#dwu">Case study →</a></div>
+      </div>
+    </article>
+    <article class="game">
+      <div class="media"><video autoplay muted loop playsinline preload="metadata" src="../video/fallingdream2.mp4"></video></div>
+      <div class="body">
+        <h3>Falling Dream</h3>
+        <div class="meta">Falling mini-game inside Don't Wake Up · Unity · solo</div>
+        <ul>
+          <li>Designed, built and tested on my own</li>
+          <li>Found the sofa collision bug above</li>
+                  </ul>
+        <div class="links"><a class="pill" href="../#fd">Case study →</a></div>
+      </div>
+    </article>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <div class="head"><div class="num">04 — The player side</div><div><h2>I listen to players.</h2><p>Your QA Tester also works with the community manager on player feedback. I've been on that side for years.</p></div></div>
+  <div class="indent">
+    <div class="quote">4.5 years of answering customers every day at a fashion brand, and an Instagram community I grew from about 20,000 to 80,000+. I know how to read feedback and find the real problem behind it.<small>Also: native Korean speaker — useful for Korean players and Korean localization checks.</small></div>
+  </div>
+</div></section>
+
+<footer><div class="wrap">
+  <h2>Thanks for looking — I'd love to test your games.</h2>
+  <div class="cta">
+    <a class="btn" href="mailto:sms940574@gmail.com">sms940574@gmail.com</a>
+    <a class="btn ghost" href="Misuk_Seo_CV_QA.pdf" target="_blank">CV (PDF)</a>
+    <a class="btn ghost" href="../">Full game portfolio</a>
+  </div>
+  <small>Misuk (Suki) Seo · Berlin · Working Holiday Visa (full work permission)</small>
+</div></footer>
+
+<script>
+  const vo=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;if(e.isIntersecting){v.play().catch(()=>{})}else{v.pause()}}),{threshold:.25});
+  document.querySelectorAll('video[autoplay]').forEach(v=>{v.removeAttribute('autoplay');vo.observe(v)});
+</script>
+</body>
+</html>
